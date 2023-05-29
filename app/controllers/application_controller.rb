@@ -11,9 +11,9 @@ class ApplicationController < ActionController::API
     before_action :attach_authenticity_token
 
 
-    def test
-        render json: { message: ["Hello from Rails"] }
-    end
+    # def test
+    #     render json: { message: ["Hello from Rails"] }
+    # end
 
     def current_user
         @current_user ||= User.find_by(session_token: session[:session_token])
