@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import './LoginForm.css';
+import './SignupForm.css';
 import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
 import samazonLogo from '../../assets/images/Samazon.PNG';
 

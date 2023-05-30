@@ -1,8 +1,9 @@
-import csrfFetch from "./csrf"
+import csrfFetch, { storeCSRFToken } from "./csrf"
 
 const SET_CURRENT_USER = 'session/setCurrentUser';
 const REMOVE_CURRENT_USER = 'session/removeCurrentUser';
 
+// vanilla Action Creators and some helpers
 const setCurrentUser = (user) => {
     return {
         type: SET_CURRENT_USER,
@@ -16,7 +17,15 @@ const setCurrentUser = (user) => {
 //     }
 // }
 
+const storeCurrentUser = user => {
+    if (user) {
+        sessionStorage.setItem('currentUser', JSON.stringify(user));
+    } else {
+        sessionStorage.removeItem('currentUser');
+    }
+}
 
+//THUNKs
 export const login = (user) => async dispatch => {
     const { email, password } = user;
     const response = await csrfFetch('/api/session', {
@@ -28,6 +37,29 @@ export const login = (user) => async dispatch => {
     return response;
 };
 
+export const restoreSession = () => async dispatch => {
+    const response = await csrfFetch('/api/session');
+    storeCSRFToken(response);
+    const data = await response.json();
+    storeCurrentUser(data.user);
+    dispatch(setCurrentUser(data.user));
+    return response;
+}
+
+export const signup = (user) => async dispatch => {
+    const { name, email, password } = user;
+    const response = await csrfFetch('/api/users', {
+        method: 'POST',
+        body: JSON.stringify({name, email, password})
+    })
+    const data = await response.json();
+    storeCurrentUser(data.user);
+    dispatch(setCurrentUser(data.user));
+    return response;
+}
+
+
+//Reducer
 const initialState = { user: null };
 
 const sessionReducer = (state = initialState, action) => {
