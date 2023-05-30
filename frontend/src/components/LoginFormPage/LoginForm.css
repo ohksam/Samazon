@@ -1,0 +1,36 @@
+#loginDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Amazon Ember Regular', Arial, sans-serif;
+}
+
+#formBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #111;
+}
+
+/* #signInHeader {
+
+} */
+
+#newToSamazonText {
+    display: flex;
+
+}
+
+#newToSamazonButton {
+    display: flex;
+}
+
+#signInButton {
+    background: #f0c14b;
+    border-color: #a88734 #9c7e31 #846a29;
+}
+
+/* #test {
+    font-family: 'Amazon Ember Heavy', Arial, sans-serif;
+    font-size: 80px;
+} */
