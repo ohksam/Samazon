@@ -82,7 +82,7 @@ const LoginFormPage = () => {
                 <p>New to Samazon?</p>
             </div>
             <div id="newToSamazonButton">
-                <NavLink to="/register">
+                <NavLink to="/signup">
                     <button>Create your Samazon account</button>
                 </NavLink>
             </div>

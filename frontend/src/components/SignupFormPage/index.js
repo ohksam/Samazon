@@ -6,53 +6,65 @@ import './SignupForm.css';
 import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
 import samazonLogo from '../../assets/images/Samazon.PNG';
 
-const LoginFormPage = () => {
+const SignupFormPage = () => {
     const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user);
+    const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
     const [errors, setErrors] = useState('');
 
     if (sessionUser) return <Redirect to='/' />;
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setErrors([]); // should be an object {} when we split
-        
-        // this is placeholder error handling for now from auth-me
-        return dispatch(sessionActions.login( {email, password}))
-          .catch(async (res) => {
+        if (password === confirmPassword) {
+          setErrors([]);
+          return dispatch(sessionActions.signup({ name, email, password }))
+            .catch(async (res) => {
             let data;
             try {
-                data = await res.clone().json();
+              data = await res.clone().json();
             } catch {
-                data = await res.text();
+              data = await res.text();
             }
             if (data?.errors) setErrors(data.errors);
             else if (data) setErrors([data]);
             else setErrors([res.statusText]);
-          })
-    }
+          });
+        }
+        return setErrors(['Password and Confirmation do not match']);
+      };
 
-    const handleDemo = (e) => {
-        e.preventDefault();
-        return dispatch(sessionActions.login({email: "John@cena.com", password: "youcantseeme"}))
-    }
+    // const handleDemo = (e) => {
+    //     e.preventDefault();
+    //     return dispatch(sessionActions.login({email: "John@cena.com", password: "youcantseeme"}))
+    // }
 
     return (
-        <div id="loginDiv">
+        <div id="signupDiv">
             <div id="logo">
               <NavLink to='/'>
                   <img src={samazonLogo}/>
               </NavLink>
             </div>
             <div id="formBox">
-            <h1 id="signInHeader">Sign in</h1>
+            <h1 id="signUpHeader">Create account</h1>
             <form onSubmit={handleSubmit}>
                 {/* placeholder error handling */}
                 <ul>
                     {errors ? errors.map(error => <li key={error}>{error}</li>) : null} 
                 </ul>
+                <label>Name
+                    <input 
+                      type="text"
+                      onChange={(e) => setName(e.target.value)}
+                      value={name}
+                    //   required
+                    />
+                </label>
+                <br />
                 <label>Email
                     <input 
                       type="text"
@@ -71,26 +83,34 @@ const LoginFormPage = () => {
                     //   required
                     />
                 </label>
-                {/* <div>{errors.password}</div> */}
-                <br/>
-                <button id="signInButton" type="submit">Sign in</button>
                 <br />
-                <button id="demoButton" onSubmit={handleDemo}>Demo Login</button>
+                {/* <div>{errors.password}</div> */}
+                <label>Confirm Password
+                    <input 
+                      type="password"
+                      onChange={(e) => setConfirmPassword(e.target.value)}
+                      value={confirmPassword}
+                    //   required
+                    />
+                </label>
+                <br/>
+                <button id="signUpButton" type="submit">Sign Up</button>
+                <br />
             </form>
             </div>
             <div id="newToSamazonText">
-                <p>New to Samazon?</p>
+                <p>Already have an account?</p>
             </div>
-            <div id="newToSamazonButton">
-                <NavLink to="/register">
-                    <button>Create your Samazon account</button>
+            <div id="goToLoginButton">
+                <NavLink to="/login">
+                    <button>Sign in</button>
                 </NavLink>
             </div>
         </div>
     )
 }
 
-export default LoginFormPage;
+export default SignupFormPage;
 
 
 {/* <div id="test">S</div> */}
