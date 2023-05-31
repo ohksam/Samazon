@@ -30,12 +30,14 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      
-      <button onClick={openMenu}>
-        <i className="fa-solid fa-user-circle" />
+      <button onMouseEnter={openMenu}>
+        <div>
+          Placeholder for modal
+        </div>
+        {/* <i className="fa-solid fa-user-circle" /> */}
       </button>
       {showMenu && (
-        <ul className="profile-dropdown">
+        <ul id="dropdownMenu">
           <li>{user.name}</li>
           <li>{user.email}</li>
           <li>
