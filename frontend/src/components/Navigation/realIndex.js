@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-// import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 // import ProfileButton from './ProfileButton';
 import samazonLogo from '../../assets/images/Samazon.PNG';
 import './Navigation.css';
@@ -27,7 +27,7 @@ const Navigation = () => {
     return (
         <div id="mainNavBar">
             <div className="navLeft">
-                <div id="navIconContainer">
+                <div id="navLogo">
                   <NavLink to='/'>
                     <a href='/'>
                       <img id='navIcon' src={samazonLogo} alt='logo' />
@@ -37,14 +37,10 @@ const Navigation = () => {
 
             </div>
             <div className="navMid">
-              <div>
-                <form>
-                <input placeholder='Search Samazon'></input>
-                </form>
-              </div>
+              <p>mid placeholder</p>
             </div>
             <div className="navRight">
-              <p>Modal goes here</p>
+              <p>right placeholder</p>
             </div>
         </div>
 
