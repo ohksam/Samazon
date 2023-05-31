@@ -9,20 +9,23 @@ import linkedInLogo from '../../assets/images/linkedInLogo.png';
 
 const Navigation = () => {
     const sessionUser = useSelector(state => state.session.user);
+    const sessionButton = (
+      <ProfileButton user={sessionUser} />
+    )
 
-    let sessionButton;   // doesn't have to be quite as dynamic, the profile buttons (aka navbar buttons) will have the navlinks
-    if (sessionUser) {
-      sessionButton = (
-        <ProfileButton user={sessionUser} />
-      );
-    } else {
-      sessionButton = (
-        <>
-          <NavLink to="/login">Log In</NavLink>
-          <NavLink to="/signup">Sign Up</NavLink>
-        </>
-      );
-    }
+    // let sessionButton;   // doesn't have to be quite as dynamic, the profile buttons (aka navbar buttons) will have the navlinks
+    // if (sessionUser) {
+    //   sessionButton = (
+    //     <ProfileButton user={sessionUser} />
+    //   );
+    // } else {
+    //   sessionButton = (
+    //     <>
+    //       <NavLink to="/login">Log In</NavLink>
+    //       <NavLink to="/signup">Sign Up</NavLink>
+    //     </>
+    //   );
+    // }
 
 
     return (

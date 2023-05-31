@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
+import { useHistory } from "react-router-dom";
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
+  
+  const history = useHistory();
   
   const openMenu = () => {
     if (showMenu) return;
@@ -28,36 +31,39 @@ function ProfileButton({ user }) {
     dispatch(sessionActions.logout());
   };
 
-  return (
+  const buttonText = user ? `Hello ${user.name}` : 'Hello, sign in'
+
+  if (user) {return (
     <>
       <button onMouseEnter={openMenu}>
         <div>
-          Hello, sign in
+          {buttonText}
         </div>
-        {/* <i className="fa-solid fa-user-circle" /> */}
+      </button>
+      {showMenu && (
+        <div id="dropdownMenu">
+          <button id="signXButton" onClick={logout}>Log Out</button>
+        </div>
+      )}
+    </>
+  )} else {return (
+    <>
+      <button onMouseEnter={openMenu}>
+        <div>
+          {buttonText}
+        </div>
       </button>
       {showMenu && (
         <ul id="dropdownMenu">
-          <li>{user.name}</li>
-          <li>{user.email}</li>
-          <li>
-            <button onClick={logout}>Log Out</button>
-          </li>
+          <div>
+            <button id="signXButton" onClick={() => {history.push('/login')}}>Sign In</button>
+            <p id="newUserText">New to Samazon? <a href="/signup">Start here</a></p>
+          </div>
         </ul>
       )}
     </>
-  );
+  )}
 }
 
-
-
-//
-// const ProfileButton = () => {
-//     return (
-//         <div style={{color: 'green', fontSize: '50px'}}>
-//         <i class="fa-sharp fa-light fa-rocket-launch"></i>
-//         </div>
-//     )
-// }
 
 export default ProfileButton;

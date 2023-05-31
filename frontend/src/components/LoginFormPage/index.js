@@ -75,8 +75,8 @@ const LoginFormPage = () => {
                 <br/>
                 <button id="signInButton" type="submit">Sign in</button>
                 <br />
-                <button id="demoButton" onSubmit={handleDemo}>Demo Login</button>
             </form>
+            <button id="demoButton" onClick={handleDemo}>Demo Login</button>
             </div>
             <div id="newToSamazonText">
                 <p>New to Samazon?</p>

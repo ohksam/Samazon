@@ -67,6 +67,7 @@
 #dropdownMenu {
     position: absolute;
     top: 40px;
+    right: 8%;
     width: 200px;
     background-color: white;
     border: 1px solid #ddd;
@@ -75,7 +76,7 @@
     z-index: 1;
 }
 
-signInButton {
+#signXButton {
     height: 33px;
     width: 100%;
     border-radius: 8px;
@@ -93,4 +94,8 @@ signInButton {
     vertical-align: middle;
     line-height: 30px;
     font-size: 13px;
+}
+
+#newUserText {
+    font-size: 12px;
 }
