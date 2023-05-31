@@ -64,9 +64,20 @@
     align-items: center;
 }
 
+#helloButton {
+    padding: 8px;
+    background-color: #37475A;
+    color: white;
+    border: 1px solid transparent;
+}
+
+#helloButton:hover {
+    border: 1px solid white;
+}
+
 #dropdownMenu {
     position: absolute;
-    top: 40px;
+    top: 50px;
     right: 8%;
     width: 200px;
     background-color: white;
@@ -95,6 +106,12 @@
     line-height: 30px;
     font-size: 13px;
 }
+
+#signXButton:hover {
+    scale: 1.05;
+    box-shadow: 2px 2px 50px #FEBD69;
+}
+
 
 #newUserText {
     font-size: 12px;

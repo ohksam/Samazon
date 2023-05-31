@@ -33,6 +33,7 @@ function ProfileButton({ user }) {
 
   const buttonText = user ? `Hello ${user.name}` : 'Hello, sign in'
 
+  //this isn't dry but it doesn't work when I abstract...
   if (user) {return (
     <>
       <button onMouseEnter={openMenu}>
@@ -48,7 +49,7 @@ function ProfileButton({ user }) {
     </>
   )} else {return (
     <>
-      <button onMouseEnter={openMenu}>
+      <button id="helloButton" onMouseEnter={openMenu}>
         <div>
           {buttonText}
         </div>
