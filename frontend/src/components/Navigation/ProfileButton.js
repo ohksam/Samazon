@@ -32,7 +32,7 @@ function ProfileButton({ user }) {
     <>
       <button onMouseEnter={openMenu}>
         <div>
-          Placeholder for modal
+          Hello, sign in
         </div>
         {/* <i className="fa-solid fa-user-circle" /> */}
       </button>
