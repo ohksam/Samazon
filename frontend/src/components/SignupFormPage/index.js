@@ -44,28 +44,29 @@ const SignupFormPage = () => {
 
     return (
         <div id="signupDiv">
-            <div id="logo">
+            <div id="signupLogoContainer">
               <NavLink to='/'>
                   <img src={samazonLogo}/>
               </NavLink>
             </div>
-            <div id="formBox">
-            <h1 id="signUpHeader">Create account</h1>
-            <form onSubmit={handleSubmit}>
+            <div id="signupFormBox">
+            <h1 id="signupHeader">Create account</h1>
+            <form id='signupForm' onSubmit={handleSubmit}>
                 {/* placeholder error handling */}
                 <ul>
                     {errors ? errors.map(error => <li key={error}>{error}</li>) : null} 
                 </ul>
-                <label>Name
+                <label>Name<br />
                     <input 
                       type="text"
                       onChange={(e) => setName(e.target.value)}
                       value={name}
+                      placeholder="First and last name"
                     //   required
                     />
                 </label>
                 <br />
-                <label>Email
+                <label>Email<br />
                     <input 
                       type="text"
                       onChange={(e) => setEmail(e.target.value)}
@@ -75,17 +76,18 @@ const SignupFormPage = () => {
                 </label>
                 {/* <div>{errors.email}</div> */}
                 <br/>
-                <label>Password
+                <label>Password<br />
                     <input 
                       type="password"
                       onChange={(e) => setPassword(e.target.value)}
                       value={password}
+                      placeholder='At least 6 characters'
                     //   required
                     />
                 </label>
                 <br />
                 {/* <div>{errors.password}</div> */}
-                <label>Confirm Password
+                <label>Confirm Password<br />
                     <input 
                       type="password"
                       onChange={(e) => setConfirmPassword(e.target.value)}
@@ -94,17 +96,19 @@ const SignupFormPage = () => {
                     />
                 </label>
                 <br/>
-                <button id="signUpButton" type="submit">Sign Up</button>
+                <button id="signupButton" type="submit">Sign Up</button>
                 <br />
             </form>
             </div>
-            <div id="newToSamazonText">
+            <div id='goToLoginContainer'>
+            <div id="goToLoginText">
                 <p>Already have an account?</p>
             </div>
             <div id="goToLoginButton">
                 <NavLink to="/login">
                     <button>Sign in</button>
                 </NavLink>
+            </div>
             </div>
         </div>
     )

@@ -29,7 +29,8 @@ const Navigation = () => {
 
 
     return (
-        <div id="mainNavBar">
+      <div id="entireNavBar">
+        <div id="topNavBar">
             <div className="navLeft">
                 <div id="navIconContainer">
                   <NavLink to='/'>
@@ -68,22 +69,17 @@ const Navigation = () => {
                 
               </div>
             </div>
-
         </div>
+        <div id="bottomNavBar">
+          <button>Books</button>
+          <button>Home</button>
+          <button>Electronics</button>
+          <button>Active</button>
+        </div>
+      </div>
 
-
-        // <ul>
-        //   <li>
-        //     <NavLink exact to='/'>Home</NavLink>
-        //     {sessionLinks}
-        //   </li>
-        // </ul>
     )
 }
 
-
-{/* <NavLink to='/'></NavLink>
-<NavLink to='/login'></NavLink>
-<NavLink to='/signup'></NavLink> */}
 
 export default Navigation;

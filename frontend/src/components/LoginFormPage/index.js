@@ -5,6 +5,7 @@ import { Redirect } from 'react-router-dom';
 import './LoginForm.css';
 import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
 import samazonLogo from '../../assets/images/Samazon.PNG';
+//maybe do another useHistory here for your 'create your Samazon account' button
 
 const LoginFormPage = () => {
     const dispatch = useDispatch();
@@ -41,19 +42,21 @@ const LoginFormPage = () => {
 
     return (
         <div id="loginDiv">
-            <div id="logo">
+            <div id="loginLogoContainer">
               <NavLink to='/'>
-                  <img src={samazonLogo}/>
+                  <img src={samazonLogo} alt='samazonLogo'/>
               </NavLink>
             </div>
-            <div id="formBox">
-            <h1 id="signInHeader">Sign in</h1>
-            <form onSubmit={handleSubmit}>
+            <div id="loginFormBox">
+            <h1 id="logInHeader">Sign in</h1>
+            <form id="loginForm" onSubmit={handleSubmit}>
                 {/* placeholder error handling */}
+                <div id="loginErrors">
                 <ul>
                     {errors ? errors.map(error => <li key={error}>{error}</li>) : null} 
                 </ul>
-                <label>Email
+                </div>
+                <label>Email<br/>
                     <input 
                       type="text"
                       onChange={(e) => setEmail(e.target.value)}
@@ -63,7 +66,7 @@ const LoginFormPage = () => {
                 </label>
                 {/* <div>{errors.email}</div> */}
                 <br/>
-                <label>Password
+                <label>Password<br />
                     <input 
                       type="password"
                       onChange={(e) => setPassword(e.target.value)}
@@ -73,18 +76,20 @@ const LoginFormPage = () => {
                 </label>
                 {/* <div>{errors.password}</div> */}
                 <br/>
-                <button id="signInButton" type="submit">Sign in</button>
+                <button id="loginButton" type="submit">Sign in</button>
                 <br />
             </form>
             <button id="demoButton" onClick={handleDemo}>Demo Login</button>
             </div>
-            <div id="newToSamazonText">
-                <p>New to Samazon?</p>
-            </div>
-            <div id="newToSamazonButton">
-                <NavLink to="/signup">
-                    <button>Create your Samazon account</button>
-                </NavLink>
+            <div id="newToSamazonContainer">
+              <div id="newToSamazonText">
+                  <p>New to Samazon?</p>
+              </div>
+              <div id="newToSamazonButton">
+                  <NavLink to="/signup">
+                      <button>Create your Samazon account</button>
+                  </NavLink>
+              </div>
             </div>
         </div>
     )
@@ -93,4 +98,3 @@ const LoginFormPage = () => {
 export default LoginFormPage;
 
 
-{/* <div id="test">S</div> */}

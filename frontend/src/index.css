@@ -10,13 +10,13 @@
     src: url('./assets/font/AmazonEmber_He.ttf')
 }
 
-#root {
+/* #root {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     position: relative;
-}
+} */
 
 #root * {
     font-family: 'Amazon Ember Regular', Arial, sans-serif;

@@ -1,6 +1,13 @@
 /* entire bar */
-#mainNavBar {
-    background-color: #37475A;
+#entireNavBar {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+#topNavBar {
+    background-color: #232F3E;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -112,7 +119,18 @@
     box-shadow: 2px 2px 50px #FEBD69;
 }
 
-
 #newUserText {
     font-size: 12px;
+}
+
+#bottomNavBar {
+    background-color: #37475A;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    /* flex-flow: row nowrap; */
+    justify-content: space-around;
+    align-items: center;
+    padding: 7px;
 }

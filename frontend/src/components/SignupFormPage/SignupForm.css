@@ -3,11 +3,50 @@
     flex-direction: column;
     align-items: center;
     font-family: 'Amazon Ember Regular', Arial, sans-serif;
+    justify-content: space-between;
 }
 
-#formBox {
+#signupLogoContainer {
+    width: 150px;
+    height: auto;
+}
+
+#signupFormBox {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-content: center;
     border: 1px solid #111;
+    padding: 40px 26px;
+    width: 350px;
+    height: 300px;
+    justify-content: space-around;
+}
+
+#signupHeader {
+    font-size: xx-large;
+    margin: 20px;
+    margin-left: 0px;
+}
+
+#signupForm {
+    display: flex;
+    flex-direction: column;
+}
+
+#signupForm input {
+    padding: 4px;
+    width: 95%;
+}
+
+#signupButton {
+    background: #f0c14b;
+    border-color: #a88734 #9c7e31 #846a29;
+    padding: 6px;
+}
+
+#goToLoginContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 5px;
 }

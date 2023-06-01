@@ -8,7 +8,7 @@ import sportsImage from '../../assets/images/Sports.jpg';
 const HomePage = () => {
     return (
         <>
-        <img src={backgroundImage} alt='backgroundImage'/>
+        <img id="backgroundImage" src={backgroundImage} alt='backgroundImage'/>
 
         <div id='directoryContainer'>
             <div id='booksDiv' className='containers'>

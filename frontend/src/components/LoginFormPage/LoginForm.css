@@ -3,32 +3,71 @@
     flex-direction: column;
     align-items: center;
     font-family: 'Amazon Ember Regular', Arial, sans-serif;
+    justify-content: space-between;
 }
 
-#formBox {
+#loginLogoContainer {
+    width: 150px;
+    height: auto;
+}
+
+#loginFormBox {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-content: center;
     border: 1px solid #111;
+    padding: 20px 26px;
+    width: 350px;
+    height: 300px;
+    justify-content: space-around;
 }
 
-/* #signInHeader {
+#logInHeader {
+    font-size: xx-large;
+}
 
-} */
+#loginForm {
+    display: flex;
+    flex-direction: column;
+}
+
+#loginErrors {
+    display: flex;
+}
+
+#loginForm input {
+    padding: 4px;
+    width: 95%;
+}
+
+#loginButton {
+    background: #f0c14b;
+    border-color: #a88734 #9c7e31 #846a29;
+}
 
 #newToSamazonText {
     display: flex;
 
 }
 
-#newToSamazonButton {
+#newToSamazonContainer {
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px;
+    width: 350px;
+    align-items: center;
+    height: 50px;
 }
 
-#signInButton {
-    background: #f0c14b;
-    border-color: #a88734 #9c7e31 #846a29;
+
+
+#newToSamazonButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
 
 /* #test {
     font-family: 'Amazon Ember Heavy', Arial, sans-serif;
