@@ -1,9 +1,8 @@
 class Api::ProductsController < ApplicationController
 
     def index
-        # @products = Product.all
-        @products = Product.where(category: (params[:category]))
-        #product.where(category = params[:category], select *)
+        @products = Product.all
+        # @products = Product.where(category: (params[:category]))
         render :index
     end
 

@@ -1,0 +1,26 @@
+#indexContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+#productContainer {
+    margin: 10px;
+}
+
+#productListingImage {
+    width: 300px;
+    height: auto;  
+
+}
+
+#productListingImage img {
+    width: 100%;
+    height: auto;
+}
+
+#productListingImage img:hover {
+    scale: 1.05;
+}

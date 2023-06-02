@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import samazonLogo from '../../assets/images/Samazon.PNG';
@@ -9,22 +9,16 @@ import linkedInLogo from '../../assets/images/linkedInLogo.png';
 
 const Navigation = () => {
     const sessionUser = useSelector(state => state.session.user);
+
     const sessionButton = (
       <ProfileButton user={sessionUser} />
     )
 
-    // let sessionButton;   // doesn't have to be quite as dynamic, the profile buttons (aka navbar buttons) will have the navlinks
-    // if (sessionUser) {
-    //   sessionButton = (
-    //     <ProfileButton user={sessionUser} />
-    //   );
-    // } else {
-    //   sessionButton = (
-    //     <>
-    //       <NavLink to="/login">Log In</NavLink>
-    //       <NavLink to="/signup">Sign Up</NavLink>
-    //     </>
-    //   );
+    // const history = useHistory();
+
+    // const handleBooks = e => {
+    //   setCategory('books');
+    //   // setTimeout(() => history.push(`/products/${category}`), 1)
     // }
 
 
@@ -71,6 +65,7 @@ const Navigation = () => {
             </div>
         </div>
         <div id="bottomNavBar">
+          <button>All Products</button>
           <button>Books</button>
           <button>Home</button>
           <button>Electronics</button>

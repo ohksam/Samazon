@@ -2,6 +2,12 @@
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+#productShowDiv h1 {
+    font-size: xx-large;
 }
 
 #productShowImageDiv {
@@ -12,4 +18,8 @@
 #productShowImageDiv img {
     width: 100%;
     height: auto;
+}
+
+#productShowDescriptionDiv {
+    line-height: 25px;
 }

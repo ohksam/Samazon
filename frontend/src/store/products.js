@@ -23,10 +23,8 @@ const receiveProduct = (product) => {
 export const getProduct = (productId) => ({products}) => products ? products[productId] : null;
 
 // THUNKs
-export const fetchProducts = (category) => async dispatch => {
-    const response = await csrfFetch('/api/products', {
-        category: category
-    })
+export const fetchProducts = () => async dispatch => {
+    const response = await csrfFetch('/api/products')
     const products = await response.json();
 
     dispatch(receiveProducts(products))

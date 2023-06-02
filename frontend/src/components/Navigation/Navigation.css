@@ -76,6 +76,7 @@
     background-color: #37475A;
     color: white;
     border: 1px solid transparent;
+    cursor: pointer;
 }
 
 #helloButton:hover {
@@ -108,7 +109,6 @@
     display: inline-block;
     padding: 0;
     text-align: center;
-    text-decoration: none;
     vertical-align: middle;
     line-height: 30px;
     font-size: 13px;

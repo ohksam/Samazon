@@ -3,8 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 // import { Link } from 'react-router-dom';
 import ProductIndexItem from './ProductIndexItem';
 import { fetchProducts } from '../../store/products';
+import './ProductIndex.css';
 
-const ProductIndex = (category) => {
+const ProductIndex = ({category}) => {
     const dispatch = useDispatch();
     const products = useSelector((state) => state.products ? Object.values(state.products) : [])
 
@@ -16,9 +17,8 @@ const ProductIndex = (category) => {
 
     return (
         <div id="indexContainer">
-            <ul>
-                {ProductListItems}
-            </ul>
+            {ProductListItems}
+            {/* {category} */}
         </div>
     )
 }

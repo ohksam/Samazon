@@ -11,22 +11,22 @@ const ProductIndexItem = ({product}) => {
     // }
 
     return (
-        <li>
           <div id="productContainer">
-              <Link id="productListingImage" to={`/products/${product.id}`}>
+              <div id="productListingImage">
+              <Link to={`/product/${product.id}`}>
                 <img src={Placeholder}/>
               </Link>
+              </div>
               <Link id="productListingName">
                 {product.name}
               </Link>
               <div id="productListingRating">
-                product.rating (oopsy)
+                Rating: product.rating (oopsy)
               </div>
               <div id="productListingPrice">
-                {product.price}
+                ${product.price}
               </div>
           </div>
-        </li>
     )
 }
 

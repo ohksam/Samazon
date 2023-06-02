@@ -20,21 +20,35 @@ const ProductShow = () => {
 
     return (
         <div id="productShowDiv">
-            <p>TESTING</p>
-            <Link to='/'>Home</Link>
-            <p>{product.name}</p>
+            <h1 id='productName'>{product.name}</h1>
             <div id="productShowImageDiv">
                 <img src={Placeholder} alt='placeholder' />
             </div>
             <div id="productShowDescriptionDiv">
+                <li>{product.description}</li>
                 <li>Placeholder for </li>
                 <li>product details</li>
                 <li>perhaps as an</li>
                 <li>unordered list</li>
             </div>
             <div id="productAddToCartDiv">
-                <p>another placeholder for buying and such</p>
+                <p>Placeholder for "add to cart" features</p>
             </div>
+        </div>
+    )
+
+    return (
+        <div id="productShow">
+            <div id="productShowLeft">
+
+            </div>
+            <div id="productShowMiddle">
+
+            </div>
+            <div id="productShowRight">
+
+            </div>
+
         </div>
     )
 }
