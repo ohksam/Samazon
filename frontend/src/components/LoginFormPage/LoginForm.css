@@ -11,6 +11,11 @@
     height: auto;
 }
 
+#loginLogoContainer img {
+    width: 100%;
+    height: auto;
+}
+
 #loginFormBox {
     display: flex;
     flex-direction: column;

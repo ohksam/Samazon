@@ -1,0 +1,15 @@
+#productShowDiv {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+#productShowImageDiv {
+    width: 300px;
+    height: auto;
+}
+
+#productShowImageDiv img {
+    width: 100%;
+    height: auto;
+}

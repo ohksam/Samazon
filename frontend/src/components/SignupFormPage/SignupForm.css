@@ -11,6 +11,11 @@
     height: auto;
 }
 
+#signupLogoContainer img {
+    width: 100%;
+    height: auto;
+}
+
 #signupFormBox {
     display: flex;
     flex-direction: column;

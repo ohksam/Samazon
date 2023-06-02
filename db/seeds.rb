@@ -30,3 +30,6 @@ ApplicationRecord.transaction do
   
     puts "Done!"
   end
+
+  Product.create(name: 'Switch', description: 'yay nintendo', price: 300, category: 'electronics')
+  Product.create(name: 'bike', description: 'yay bike', price: 600, category: 'active')

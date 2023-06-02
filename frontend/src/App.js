@@ -1,3 +1,4 @@
+import './reset.css';
 import React from "react";
 import { Route, Switch } from 'react-router-dom';
 import LoginFormPage from "./components/LoginFormPage";
@@ -5,6 +6,8 @@ import SignupFormPage from "./components/SignupFormPage";
 import Navigation from "./components/Navigation";
 import HomePage from "./components/HomePage";
 // import Modal from './components/Modal';
+import ProductShow from "./components/ProductShow";
+// import ProductIndex from './components/ProductIndex';
 
 function App() {
   return (
@@ -22,6 +25,12 @@ function App() {
         <Route path='/signup' exact>
           <SignupFormPage />
         </Route>
+        <Route path='/products/:productId'>
+          <ProductShow />
+        </Route>
+        {/* <Route path='/products'>
+          <ProductIndex /> PASS THE category PROP IN HERE
+        </Route> */}
       </Switch>
     </>
   );

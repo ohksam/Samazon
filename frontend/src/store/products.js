@@ -19,16 +19,21 @@ const receiveProduct = (product) => {
     }
 }
 
+//custom selector
+export const getProduct = (productId) => ({products}) => products ? products[productId] : null;
+
 // THUNKs
-export const fetchProducts = () => async dispatch => {
-    const response = await csrfFetch('/api/products')
+export const fetchProducts = (category) => async dispatch => {
+    const response = await csrfFetch('/api/products', {
+        category: category
+    })
     const products = await response.json();
 
     dispatch(receiveProducts(products))
 }
 
-export const fetchProduct = () => async dispatch => {
-    const response = await csrfFetch('/api/products')
+export const fetchProduct = (productId) => async dispatch => {
+    const response = await csrfFetch(`/api/products/${productId}`)
     const product = await response.json();
 
     dispatch(receiveProduct(product))
@@ -43,7 +48,7 @@ const productsReducer = (state = {}, action) => {
         case RECEIVE_PRODUCTS:
             return {...state, ...action.products};
         case RECEIVE_PRODUCT:
-            nextState[action.product] = action.product;
+            nextState[action.product.id] = action.product;
             return nextState;
         default:
             return state;
