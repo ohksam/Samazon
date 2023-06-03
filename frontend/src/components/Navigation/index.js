@@ -16,14 +16,11 @@ const Navigation = () => {
 
     // const history = useHistory();
 
-    const categories = ['Books', 'Electronics', 'Home Decor', 'Sporting Goods', 'Food' ];
+    const categories = ['books', 'electronics', 'home', 'active', 'food'];
     const categoryButtons = categories.map(category => (
-      // <NavLink to={`/categories/${category}`}>
-      //   <button>All Products</button>
-      // </NavLink>
       
-      <NavLink to='/products'>
-        <button>{category}</button>
+      <NavLink to={`/categories/${category}`}>
+        <button>{category.toUpperCase()}</button>
       </NavLink>
     ))
 

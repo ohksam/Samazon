@@ -11,19 +11,19 @@ const HomePage = () => {
         <img id="backgroundImage" src={backgroundImage} alt='backgroundImage'/>
 
         <div id='directoryContainer'>
-            <div id='booksDiv' className='containers'>
+            <div className='containers'>
               <h1>Books</h1>
               <img src={booksImage}></img>
             </div>
-            <div id='homeDecorDiv' className='containers'>
+            <div className='containers'>
               <h1>Home Decor</h1>
               <img src={homeImage}></img>
             </div>
-            <div id='videoGamesDiv' className='containers'>
+            <div className='containers'>
               <h1>Video Games</h1>
               <img src={gamesImage}></img>
             </div>
-            <div id='sportsDiv' className='containers'>
+            <div className='containers'>
               <h1>Sports and Active</h1>
               <img src={sportsImage}></img>
             </div>

@@ -21,7 +21,8 @@ const ProductIndexItem = ({product}) => {
                 {product.name}
               </Link>
               <div id="productListingRating">
-                Rating: product.rating (oopsy)
+                Rating: average product rating 
+                {/* (I don't think this will exist on the product table. might just do some quick Math on average review / num of reviews) */}
               </div>
               <div id="productListingPrice">
                 ${product.price}

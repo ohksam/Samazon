@@ -1,5 +1,5 @@
 import './reset.css';
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Route, Switch } from 'react-router-dom';
 import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
@@ -8,8 +8,6 @@ import HomePage from "./components/HomePage";
 // import Modal from './components/Modal';
 import ProductShow from "./components/ProductShow";
 import ProductIndex from './components/ProductIndex';
-import { useHistory } from 'react-router-dom';
-
 
 
 function App() {
@@ -37,7 +35,7 @@ function App() {
         <Route path='/products/:productId' exact>
           <ProductShow />
         </Route>
-        <Route path='/products' exact>
+        <Route path='/categories/:categoryName' exact>
           <ProductIndex /> 
         </Route>
       </Switch>

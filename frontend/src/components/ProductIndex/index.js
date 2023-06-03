@@ -4,10 +4,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import ProductIndexItem from './ProductIndexItem';
 import { fetchProducts } from '../../store/products';
 import './ProductIndex.css';
+import { useParams } from 'react-router-dom';
 
 const ProductIndex = () => {
     const dispatch = useDispatch();
-    const products = useSelector((state) => state.products ? Object.values(state.products) : [])
+    const {categoryName} = useParams();
+    // const products = useSelector((state) => state.products ? Object.values(state.products) : [])
+    const products = useSelector(state => {
+        return Object.values(state.products).filter(product => product.category === categoryName)
+    })
 
     useEffect(() => {
         dispatch(fetchProducts())
