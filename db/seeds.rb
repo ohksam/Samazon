@@ -27,9 +27,24 @@ ApplicationRecord.transaction do
         password: 'password'
       }) 
     end
+
+    # 10.times do
+    #   Product.create!({
+    #     name: Faker::Book.title,
+    #     description: 'F',            **there's no randomizer for descriptions
+    #     price: Faker::Commerce.price(range: 9.99..24.99),
+    #     category: 'books'
+    #   })
+    end
   
     puts "Done!"
   end
 
   Product.create(name: 'Switch', description: 'yay nintendo', price: 300, category: 'electronics')
   Product.create(name: 'bike', description: 'yay bike', price: 600, category: 'active')
+  Product.create(name: 'The Count of Monte Cristo', description: 'a great book. one of the highest-rated classics. highly recommended. 10/10. yes. very nice', price: 19.99, category: 'Books')
+  # Product.create(name: , description: , price: , category: )
+  # Product.create(name: , description: , price: , category: )
+  # Product.create(name: , description: , price: , category: )
+  # Product.create(name: , description: , price: , category: )
+  # Product.create(name: , description: , price: , category: )

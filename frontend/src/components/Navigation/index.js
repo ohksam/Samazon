@@ -16,11 +16,16 @@ const Navigation = () => {
 
     // const history = useHistory();
 
-    // const handleBooks = e => {
-    //   setCategory('books');
-    //   // setTimeout(() => history.push(`/products/${category}`), 1)
-    // }
-
+    const categories = ['Books', 'Electronics', 'Home Decor', 'Sporting Goods', 'Food' ];
+    const categoryButtons = categories.map(category => (
+      // <NavLink to={`/categories/${category}`}>
+      //   <button>All Products</button>
+      // </NavLink>
+      
+      <NavLink to='/products'>
+        <button>{category}</button>
+      </NavLink>
+    ))
 
     return (
       <div id="entireNavBar">
@@ -45,8 +50,8 @@ const Navigation = () => {
                     </a>
                   </div>
                 </div>
-
             </div>
+
             <div className="navMid">
               <div id='navSearch'>
                 <form>
@@ -55,6 +60,7 @@ const Navigation = () => {
                 </form>
               </div>
             </div>
+
             <div className="navRight">
               <div id='sessionButton'>
                 {sessionButton}
@@ -65,11 +71,7 @@ const Navigation = () => {
             </div>
         </div>
         <div id="bottomNavBar">
-          <button>All Products</button>
-          <button>Books</button>
-          <button>Home</button>
-          <button>Electronics</button>
-          <button>Active</button>
+          {categoryButtons}
         </div>
       </div>
 

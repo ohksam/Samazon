@@ -5,23 +5,24 @@ import ProductIndexItem from './ProductIndexItem';
 import { fetchProducts } from '../../store/products';
 import './ProductIndex.css';
 
-const ProductIndex = ({category}) => {
+const ProductIndex = () => {
     const dispatch = useDispatch();
     const products = useSelector((state) => state.products ? Object.values(state.products) : [])
 
     useEffect(() => {
-        dispatch(fetchProducts(category))
-    }, [category])
+        dispatch(fetchProducts())
+    }, [])
 
     const ProductListItems = products.map((product) => <ProductIndexItem product={product}/>)
 
     return (
+        <div id="bigContainer">
         <div id="indexContainer">
             {ProductListItems}
             {/* {category} */}
         </div>
+        </div>
     )
 }
-
 
 export default ProductIndex;

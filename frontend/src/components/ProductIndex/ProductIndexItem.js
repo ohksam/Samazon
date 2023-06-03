@@ -13,7 +13,7 @@ const ProductIndexItem = ({product}) => {
     return (
           <div id="productContainer">
               <div id="productListingImage">
-              <Link to={`/product/${product.id}`}>
+              <Link to={`/products/${product.id}`}>
                 <img src={Placeholder}/>
               </Link>
               </div>

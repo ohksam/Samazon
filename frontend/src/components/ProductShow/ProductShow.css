@@ -1,3 +1,12 @@
+/* the ENTIRE PAGE */
+#productShowPage {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-top: 20px;
+}
+
+/* everything top half */
 #productShowDiv {
     display: flex;
     flex-direction: row;
@@ -6,12 +15,15 @@
     margin-top: 20px;
 }
 
-#productShowDiv h1 {
+/* don't be so general with h1 this needs to get separated for transactionDiv... */
+#productShowPage h1 {
     font-size: xx-large;
 }
 
+/* LEFT */
+
 #productShowImageDiv {
-    width: 300px;
+    width: 500px;
     height: auto;
 }
 
@@ -20,6 +32,69 @@
     height: auto;
 }
 
-#productShowDescriptionDiv {
-    line-height: 25px;
+#productShowImageDiv img:hover {
+    scale: 1.05;
 }
+
+/* MIDDLE */
+
+#productShowInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#midDivide {
+    width: 100%;
+}
+
+/* find a better way to do this */
+#productShowDescriptionDiv {
+    line-height: 20px;
+}
+
+
+/* RIGHT */
+
+#productAddToCartDiv {
+    border: 1px solid rgb(175, 171, 171);
+    border-radius: 10px;
+    padding: 15px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#addToCartButton {
+    height: 33px;
+    width: 100%;
+    border-radius: 15px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 5px 0 rgba(213,217,217,.5);
+    background: #FFD814;
+    border-color: #FCD200;
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 13px;
+}
+
+#buyNowButton {
+    background: #FCD200;
+}
+
+/* top half product, bottom half review */
+#productShowDivider {
+    border: 1px solid rgb(175, 171, 171);
+    width: 100%;
+}
+
+#productRatingDiv {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-around; */
+}
+
