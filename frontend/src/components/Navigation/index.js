@@ -3,6 +3,7 @@ import { NavLink, useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import samazonLogo from '../../assets/images/Samazon.PNG';
+import whiteSamazonLogo from '../../assets/images/WhiteSamazon.png';
 import './Navigation.css';
 import gitHubLogo from '../../assets/images/gitHubLogo.png';
 import linkedInLogo from '../../assets/images/linkedInLogo.png';
@@ -31,7 +32,7 @@ const Navigation = () => {
                 <div id="navIconContainer">
                   <NavLink to='/'>
                     <a href='/'>
-                      <img id='navIcon' src={samazonLogo} alt='logo' />
+                      <img id='navIcon' src={whiteSamazonLogo} alt='logo' />
                     </a>
                   </NavLink>
                 </div>

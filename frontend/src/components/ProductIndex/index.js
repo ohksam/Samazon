@@ -16,17 +16,20 @@ const ProductIndex = () => {
 
     useEffect(() => {
         dispatch(fetchProducts())
-    }, [])
+    }, [dispatch])
 
     const ProductListItems = products.map((product) => <ProductIndexItem product={product}/>)
 
     return (
+        <>
         <div id="bigContainer">
+        <h1 id="indexHeader">{categoryName}</h1>
         <div id="indexContainer">
             {ProductListItems}
             {/* {category} */}
         </div>
         </div>
+        </>
     )
 }
 

@@ -31,7 +31,7 @@ ApplicationRecord.transaction do
     10.times do
       Product.create!({
         name: Faker::Book.title,
-        description: Faker::Lorem.sentences(number: 6),
+        description: Faker::Lorem.paragraph(sentence_count: 6),
         price: Faker::Commerce.price(range: 9.99..24.99),
         category: 'books'
       })

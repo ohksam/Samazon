@@ -20,7 +20,7 @@ const ProductShow = () => {
     if (!product) return null; //or return 'product not found :('
 
     const descriptionList = product.description.split('.');
-    const descriptionListItems = descriptionList.map((sentence) => <li>{sentence}</li>)
+    const descriptionListItems = descriptionList.map((sentence) => <li key={Math.random()}>{sentence}</li>)
 
     // const handleAddToCart = (e) => {
     //     e.preventDefault();
@@ -58,8 +58,16 @@ const ProductShow = () => {
                     <h1 id='productPrice'>${product.price}</h1>
                     <p>FREE returns</p>
                     <p>FREE shipping</p>
+                    <p>In stock</p>
 
                     <form id='productShowForm' onSubmit={(e) => e.preventDefault()}> 
+                      <span>Qty:</span>
+                      <select id="quantityDropdown">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                      </select>
 
                       <button id='addToCartButton'>Add to Cart</button>
                     </form>
