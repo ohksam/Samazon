@@ -27,7 +27,7 @@
 #productListingImage {
     width: 300px;
     height: auto;  
-
+    margin-bottom: 5px;
 }
 
 #productListingImage img {

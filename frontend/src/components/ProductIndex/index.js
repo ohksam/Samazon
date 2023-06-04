@@ -26,7 +26,6 @@ const ProductIndex = () => {
         <h1 id="indexHeader">{categoryName}</h1>
         <div id="indexContainer">
             {ProductListItems}
-            {/* {category} */}
         </div>
         </div>
         </>

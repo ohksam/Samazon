@@ -44,8 +44,9 @@ ApplicationRecord.transaction do
   Product.create(name: 'bike', description: 'yay bike', price: 600, category: 'active')
   Product.create(name: 'The Count of Monte Cristo', description: 'a great book. one of the highest-rated classics. highly recommended. 10/10. yes. very nice', price: 19.99, category: 'Books')
   Product.create!(name: 'Better Couch', description: 'This couch is so much better.Even more comfortable than the last one.Made of the finest materials from across the world.Great stuff', price: 599.99, category: 'home')
-  # Product.create(name: , description: , price: , category: )
-  # Product.create(name: , description: , price: , category: )
-  # Product.create(name: , description: , price: , category: )
+
+  Product.create(name: 'Cheez-Its', description: 'Delicious breakfast.', price: 4.99, category: 'food')
+  Product.create(name: 'Bananas', description: 'Also a delicious breakfast', price: 0.69, category: 'food')
+  Product.create(name: 'Goldfish', description: 'The snack that smiles back', price: '3.99', category: 'food')
   # Product.create(name: , description: , price: , category: )
   # Product.create(name: , description: , price: , category: )

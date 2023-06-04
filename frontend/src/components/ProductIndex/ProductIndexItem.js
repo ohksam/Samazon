@@ -17,7 +17,7 @@ const ProductIndexItem = ({product}) => {
                 <img src={Placeholder}/>
               </Link>
               </div>
-              <Link id="productListingName">
+              <Link id="productListingName" to={`/products/${product.id}`}>
                 {product.name}
               </Link>
               <div id="productListingRating">
