@@ -10,11 +10,13 @@ const ProductIndexItem = ({product}) => {
     //     //logic for navigating to show page - which might not be necessary if these render with an a-link already
     // }
 
+    const productImage = product.photo ? product.photo.url : Placeholder;
+
     return (
           <div id="productContainer">
               <div id="productListingImage">
               <Link to={`/products/${product.id}`}>
-                <img src={Placeholder}/>
+                <img src={productImage}/>
               </Link>
               </div>
               <Link id="productListingName" to={`/products/${product.id}`}>

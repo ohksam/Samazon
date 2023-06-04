@@ -12,13 +12,6 @@ import ProductIndex from './components/ProductIndex';
 
 function App() {
 
-  //category state var passed as prop into nav and prodindex
-  // const [category, setCategory] = useState('');
-  // const history = useHistory()
-  // useEffect(() => {
-  //   if (category !== '') history.push(`/products/${category}`)
-  // }, [category])
-
   return (
     <>
       <Navigation />
