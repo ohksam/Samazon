@@ -8,6 +8,7 @@ import HomePage from "./components/HomePage";
 // import Modal from './components/Modal';
 import ProductShow from "./components/ProductShow";
 import ProductIndex from './components/ProductIndex';
+import CartIndex from './components/CartIndex';
 
 
 function App() {
@@ -30,6 +31,9 @@ function App() {
         </Route>
         <Route path='/categories/:categoryName' exact>
           <ProductIndex /> 
+        </Route>
+        <Route path='/cart' exact>
+          <CartIndex />
         </Route>
       </Switch>
     </>

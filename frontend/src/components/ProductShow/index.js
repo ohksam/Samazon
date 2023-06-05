@@ -1,17 +1,20 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProduct, getProduct } from "../../store/products";
 import Placeholder from '../../assets/images/Placeholder.jpg';
 import './ProductShow.css';
 import { useHistory } from 'react-router-dom';
+import { createCartItem } from "../../store/cart_items";
 
 const ProductShow = () => {
     const { productId } = useParams();
     const dispatch = useDispatch();
     const product = useSelector(getProduct(productId));
     const history = useHistory();
-    const sessionUser = useSelector(state => state.session.user);
+    const currentUser = useSelector(state => state.session.user);
+
+    const [quantity, setQuantity] = useState(1);
 
     useEffect(() => {
         dispatch(fetchProduct(productId))
@@ -19,20 +22,22 @@ const ProductShow = () => {
 
     if (!product) return null; //or return 'product not found :('
 
-    const descriptionList = product.description.split('.');
+    const descriptionList = product.description.split('.'); //slice for testing
     const descriptionListItems = descriptionList.map((sentence) => <li key={Math.random()}>{sentence}</li>)
 
-    // const handleAddToCart = (e) => {
-    //     e.preventDefault();
+    const handleAddToCart = (e) => {
+        e.preventDefault();
 
-    //     if (!sessionUser) {
-    //         history.push('/login')
-    //     } else {
-    //         const theProduct = {quantity, user_id, product_id};
-    //         dispatch(addCartItem(theProduct));
-    //         history.push('/cart')
-    //     }
-    // }
+        if (!currentUser) {
+          history.push('/login')
+        } else {
+          const customer_id = currentUser.id;
+          const product_id = productId;
+          const theProduct = {quantity, customer_id, product_id};
+          dispatch(createCartItem(theProduct));
+          history.push('/cart')
+        }
+    }
 
     return (
         <div id="productShowPage">
@@ -60,13 +65,16 @@ const ProductShow = () => {
                     <p>FREE shipping</p>
                     <p>In stock</p>
 
-                    <form id='productShowForm' onSubmit={(e) => e.preventDefault()}> 
+                    <form id='productShowForm' onSubmit={handleAddToCart}> 
                       <span>Qty:</span>
-                      <select id="quantityDropdown">
+                      <select id="quantityDropdown" onChange={(e) => setQuantity(e.target.value)}>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
                       </select>
 
                       <button id='addToCartButton'>Add to Cart</button>

@@ -11,7 +11,7 @@
 #  updated_at  :datetime         not null
 #
 class CartItem < ApplicationRecord
-    belongs_to :purchaser,
+    belongs_to :user,
         foreign_key: :customer_id,
         class_name: :User
 

@@ -6,7 +6,10 @@ class Api::CartItemsController < ApplicationController
     end
 
     def create
+        # debugger
         @cart_item = CartItem.new(item_params)
+        @user = current_user
+        # debugger
 
         if @cart_item.save
             render :show

@@ -73,7 +73,7 @@
 
 #helloButton {
     padding: 8px;
-    background-color: #37475A;
+    background-color: #232F3E;
     color: white;
     border: 1px solid transparent;
     cursor: pointer;
@@ -86,7 +86,7 @@
 #dropdownMenu {
     position: absolute;
     top: 50px;
-    right: 8%;
+    right: 18%;
     width: 200px;
     background-color: white;
     border: 1px solid #ddd;
@@ -121,6 +121,29 @@
 
 #newUserText {
     font-size: 12px;
+}
+
+#historyButton {
+    padding: 8px;
+    background-color: #232F3E;
+    color: white;
+    border: 1px solid transparent;
+    cursor: not-allowed;
+    margin: 0 5px;
+}
+
+#historyButton:hover {
+    border: 1px solid white;
+}
+
+#cartImage {
+    width: 30px;
+    height: auto;
+    border: 1px solid transparent;
+}
+
+#cartImage:hover {
+    border: 1px solid white;
 }
 
 #bottomNavBar {

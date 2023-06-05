@@ -39,7 +39,7 @@ export const login = (user) => async dispatch => {
 };
 
 export const restoreSession = () => async dispatch => {
-    debugger
+    // debugger
     const response = await csrfFetch('/api/session');
     storeCSRFToken(response);
     const data = await response.json();
@@ -71,7 +71,9 @@ export const logout = () => async dispatch => {
 
 
 //Reducer
-const initialState = { user: null };
+const initialState = { 
+    user: JSON.parse(sessionStorage.getItem('currentUser'))
+};
 
 const sessionReducer = (state = initialState, action) => {
     Object.freeze(state);
