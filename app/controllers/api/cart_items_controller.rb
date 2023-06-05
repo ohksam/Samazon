@@ -1,7 +1,7 @@
 class Api::CartItemsController < ApplicationController
 
     def index
-        @cart_items = current_user.cart_items#.where(purchased: false)?
+        @cart_items = current_user.cart_items
         render :index
     end
 
@@ -26,16 +26,14 @@ class Api::CartItemsController < ApplicationController
 
     def destroy
         @cart_item = CartItem.find(params[:id])
-        @cart_items = CartItem.all # needed?
         if @cart_item
             @cart_item.delete
-            render :index #is this needed?
         end
     end
 
     private
 
     def item_params 
-        params.require(:cart_item).permit(:customer_id, :product_id, :quantity)
+        params.require(:cart_item).permit(:customer_id, :product_id, :quantity, :purchased)
     end
 end

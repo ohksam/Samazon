@@ -33,11 +33,13 @@ export const login = (user) => async dispatch => {
         body: JSON.stringify({ email, password })
     });
     const data = await response.json();
+    storeCurrentUser(data.user);
     dispatch(setCurrentUser(data.user));
     return response;
 };
 
 export const restoreSession = () => async dispatch => {
+    debugger
     const response = await csrfFetch('/api/session');
     storeCSRFToken(response);
     const data = await response.json();
