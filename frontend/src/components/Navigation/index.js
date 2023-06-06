@@ -2,7 +2,6 @@
 import { NavLink, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
-// import samazonLogo from '../../assets/images/Samazon.PNG';
 import whiteSamazonLogo from '../../assets/images/WhiteSamazon.png';
 import './Navigation.css';
 import gitHubLogo from '../../assets/images/gitHubLogo.png';

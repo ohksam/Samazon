@@ -37,12 +37,13 @@ const CartIndex = () => {
               </div>
                 <div id='allCartItems'>
                   {CartListItems}
-                  <p>testing</p>
+                  {/* <p>testing</p> */}
+                  <p>if empty, 'click here to browse our items!' or something</p>
                 </div>
           </div>
           <div id='cartIndexRight'>
-              <div id='subtotal'>
-                Subtotal: ${cartTotal}
+              <div>
+                <span>Subtotal: </span><span id='subtotalSpan'>${cartTotal}</span>
               </div>
               <button id='checkoutButton' onClick={handleCheckout}>Complete Purchase</button>
           </div>

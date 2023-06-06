@@ -47,9 +47,9 @@ export const createCartItem = (cartItem) => async dispatch => {
         method: 'POST',
         body: JSON.stringify(cartItem)
     })
-    const item = await response.json();
+    const data = await response.json();
 
-    dispatch(receiveCartItem(item))
+    dispatch(receiveCartItem(data.item))
 }
 
 export const updateCartItem = (cartItem) => async dispatch => {
@@ -57,9 +57,9 @@ export const updateCartItem = (cartItem) => async dispatch => {
         method: 'PATCH',
         body: JSON.stringify(cartItem)
     })
-    const item = await response.json();
+    const data = await response.json();
 
-    dispatch(receiveCartItem(item))
+    dispatch(receiveCartItem(data.item))
 }
 
 export const deleteCartItem = (cartItemId) => async dispatch => {
