@@ -13,9 +13,9 @@
     flex-direction: row;
     flex-wrap: nowrap;
     /* flex-flow: row nowrap; */
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
-    padding: 10px;
+    padding: 7px;
 }
 
 /* left section (samazon logo, GH/Li logos */
@@ -55,12 +55,46 @@
 .navMid {
     display: flex;
     flex-wrap: nowrap;
-    /* width: 50%; */
+    width: 50%;
 }
 
-#navSearch {
+#navSearchContainer {
+    /* display: flex; */
     width: 100%
 }
+
+/* allgpt */
+#navSearchForm {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    padding: 0 10px;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  #navSearchInput {
+    flex-grow: 1;
+    height: 32px;
+    padding: 4px 8px;
+    border: none;
+    font-size: 14px;
+  }
+
+  #navSearchForm button {
+    padding: 4px 12px;
+    border: none;
+    background-color: #f7d358;
+    color: #111;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  #navSearchForm button:hover {
+    background-color: #f0c14b;
+  }
 
 /* right section, login modal, cart */
 .navRight {
@@ -86,7 +120,7 @@
 #dropdownMenu {
     position: absolute;
     top: 50px;
-    right: 18%;
+    right: 13%;
     width: 200px;
     background-color: white;
     border: 1px solid #ddd;
@@ -167,5 +201,19 @@
     /* flex-flow: row nowrap; */
     justify-content: space-around;
     align-items: center;
-    padding: 7px;
+    padding: 3px;
 }
+
+#bottomNavBar button {
+    padding: 8px 12px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+#bottomNavBar button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }

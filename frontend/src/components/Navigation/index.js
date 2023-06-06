@@ -69,9 +69,9 @@ const Navigation = () => {
             </div>
 
             <div className="navMid">
-              <div id='navSearch'>
-                <form>
-                  <input placeholder='Search Samazon'></input>
+              <div id='navSearchContainer'>
+                <form id='navSearchForm'>
+                  <input id='navSearchInput' placeholder='Search Samazon'></input>
                   <button>Search</button>
                 </form>
               </div>
