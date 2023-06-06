@@ -19,13 +19,20 @@ class Api::CartItemsController < ApplicationController
     end
 
     def update
-        # debugger
+        debugger
         @cart_item = CartItem.find(params[:id])
         if @cart_item && @cart_item.update(item_params)
             render :show
         else
             render json: { error: 'Failed to update cart item'}, status: 422
         end
+    end
+
+    def checkout
+        #take in an array, iterate through it and update each one?
+        #cart_items.each do |item|
+
+        #end
     end
 
     def destroy

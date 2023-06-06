@@ -12,7 +12,8 @@ Rails.application.routes.draw do
     resources :products, only: [:show, :index]
     resources :cart_items, except: [:new, :edit, :show]
     patch 'api/cart_items', to: 'cart_items#checkout'
-    #maybe not api?
+    #maybe not api? since you're already in namespace api
   end
 
+  get '*path', to: "static_pages#frontend_index"
 end

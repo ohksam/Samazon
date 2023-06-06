@@ -72,6 +72,10 @@ export const deleteCartItem = (cartItemId) => async dispatch => {
     dispatch(removeCartItem(cartItemId))
 }
 
+// export const checkoutAllItems = (cartItems) => async dispatch
+//create a custom action too
+//instead of passing the entire items, can just pass the IDs 
+
 // reducer
 
 const cartItemsReducer = (state = {}, action) => {
