@@ -28,6 +28,7 @@ function ProfileButton({ user }) {
   const logout = (e) => {
     e.preventDefault();
     dispatch(sessionActions.logout());
+    history.push('/')
   };
 
   const buttonText = user ? `Hello ${user.name}` : 'Hello, sign in'

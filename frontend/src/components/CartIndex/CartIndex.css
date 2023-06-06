@@ -59,8 +59,9 @@
 }
 
 #cartItemImage {
-    width: 100px;
+    width: 175px;
     height: auto;
+    margin-right: 5px;
 }
 
 #cartImg {
@@ -68,6 +69,9 @@
     height: auto;
 }
 
+/* #cartItemNameAndQuant {
+    
+} */
 
 #cartIndexRight {
     margin-top: 20px;

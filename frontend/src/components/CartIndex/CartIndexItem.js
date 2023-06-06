@@ -17,10 +17,13 @@ const CartIndexItem = ({cartItem}) => {
                 <img id="cartImg" src={cartImage} alt='cartItemImage'/>
               </Link>
             </div>
+            <div id='cartItemNameAndQuant'>
             <Link id='cartItemName' to={`/products/${cartItem.productId}`}>
                 {cartItem.product.name}
                 {/* product.name isn't working */}
             </Link>
+            <div>Qty: {cartItem.quantity}</div>
+            </div>
         </div>
     )
 }
