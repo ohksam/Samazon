@@ -16,18 +16,9 @@ const Navigation = () => {
       <ProfileButton user={sessionUser} />
     )
 
-
-    //maybe useEffect and useState it?
-
-    // const sessionCartItems = useSelector(state => Object.values(state.cartItems));
-    // let numCartItems = 0;
-    // sessionCartItems.forEach(item => cartItemCount += item.quantity)
-    // const cartItemCount = sessionUser ? numCartItems : 0;
-
-    // useEffect(() => {
-
-    // }, [])
-    //
+    const cartItems = useSelector(state => Object.values(state.cartItems));
+    let numCartItems = 0;
+    cartItems.forEach(item => numCartItems += item.quantity);
 
     const categories = ['books', 'electronics', 'home', 'active', 'food'];
     const categoryButtons = categories.map(category => (
@@ -37,6 +28,7 @@ const Navigation = () => {
       </NavLink>
     ))
 
+    const cartClickDestination = sessionUser ? '/cart' : '/login';
 
 
 
@@ -49,9 +41,9 @@ const Navigation = () => {
             <div className="navLeft">
                 <div id="navIconContainer">
                   <NavLink to='/'>
-                    <a href='/'>
+                    {/* <a href='/'> */}
                       <img id='navIcon' src={whiteSamazonLogo} alt='logo' />
-                    </a>
+                    {/* </a> */}
                   </NavLink>
                 </div>
                 <div id="navSocials">
@@ -85,10 +77,10 @@ const Navigation = () => {
                 <button id='historyButton'>Returns & Orders</button>
               </div>
               <div id='cartStuff'>
-                <a href='/cart'>
-                <span id='cartItemCount'>0</span>
+                <NavLink to={cartClickDestination}>
+                <span id='cartItemCount'>{numCartItems}</span>
                   <img id='cartImage' src={cartIcon} />
-                </a>
+                </NavLink>
               </div>
             </div>
         </div>

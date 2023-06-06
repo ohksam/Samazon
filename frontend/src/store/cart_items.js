@@ -62,7 +62,7 @@ export const updateCartItem = (cartItem) => async dispatch => {
     })
     const data = await response.json();
 
-    dispatch(receiveCartItem(data.item))
+    dispatch(receiveCartItem(data))
 }
 
 export const deleteCartItem = (cartItemId) => async dispatch => {

@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import Placeholder from '../../assets/images/Placeholder.jpg';
 import { useDispatch } from "react-redux";
 import { updateCartItem } from "../../store/cart_items";
-import { fetchCartItem } from "../../store/cart_items";
+// import { fetchCartItem } from "../../store/cart_items";
+import { deleteCartItem } from "../../store/cart_items";
 
 const CartIndexItem = ({ cartItem }) => {
   const dispatch = useDispatch();
@@ -12,8 +13,15 @@ const CartIndexItem = ({ cartItem }) => {
   const handleAdjustQuantity = (e) => {
     const newQuantity = parseInt(e.target.value);
     setQuantity(newQuantity);
+    
+    console.log(cartItem)
+    dispatch(updateCartItem({ quantity: newQuantity, ...cartItem }));
+  }
 
-    dispatch(updateCartItem({ ...cartItem, quantity: newQuantity }));
+  const handleDelete = (e) => {
+    e.preventDefault();
+
+    dispatch(deleteCartItem(cartItem.id))
   }
 
   // useEffect(() => {
@@ -33,13 +41,13 @@ const CartIndexItem = ({ cartItem }) => {
           <img id="cartImg" src={cartImage} alt='cartItemImage' />
         </Link>
       </div>
-      <div id='cartItemNameAndQuant'>
+      <div id='cartItemEditOptions'>
         <Link id='cartItemName' to={`/products/${cartItem.productId}`}>
           {cartItem.product.name}
           {/* product.name isn't working */}
         </Link>
         {/* <div>Qty: {cartItem.quantity}</div> */}
-        <div>Qty:
+        <div id='changeQuantityOrDelete'>Qty:
           <select id="cartItemQuantityDropdown" value={quantity} onChange={handleAdjustQuantity}>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -51,8 +59,10 @@ const CartIndexItem = ({ cartItem }) => {
             <option value="8">8</option>
             <option value="9">9</option>
           </select>
+          <button id='cartItemDelet' onClick={handleDelete}>TO THE TRASH</button>
         </div>
       </div>
+      <div id='quantityTimesPrice'>{quantity} x ${cartItem.product.price}</div>
     </div>
   )
 }

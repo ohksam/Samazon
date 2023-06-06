@@ -15,13 +15,22 @@ const CartIndex = () => {
 
     const CartListItems = cartItems.map((cartItem) => <CartIndexItem cartItem={cartItem}/>)
 
+    let cartTotal = 0;
+    cartItems.forEach(item => cartTotal += (item.product.price * item.quantity));
+    
+    let numCartItems = 0;
+    cartItems.forEach(item => numCartItems += item.quantity);
 
-    const cartTotal = 0.00;
+    const subtotalText = numCartItems === 1 ? '1 item' : `${numCartItems} items`;
 
     const handleCheckout = (e) => {
         e.preventDefault();
 
+        alert('yay checkout!') 
+
         //checkout logic (set current cart_items boolean to true)
+        // DO I NEED TO FOREACH ITEM AND DISPATCH UPDATE?!?!?!?
+        // pls no
     }
 
 
@@ -41,13 +50,12 @@ const CartIndex = () => {
               </div>
                 <div id='allCartItems'>
                   {CartListItems}
-                  {/* <p>testing</p> */}
-                  <p>if empty, 'click here to browse our items!' or something</p>
+                  <p>go buy some items or something</p>
                 </div>
           </div>
           <div id='cartIndexRight'>
               <div>
-                <span>Subtotal: </span><span id='subtotalSpan'>${cartTotal}</span>
+                <span>Subtotal ({subtotalText}): </span><span id='subtotalSpan'>${cartTotal}</span>
               </div>
               <button id='checkoutButton' onClick={handleCheckout}>Complete Purchase</button>
           </div>

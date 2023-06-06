@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     resource :session, only: [:show, :create, :destroy]
     resources :products, only: [:show, :index]
     resources :cart_items, except: [:new, :edit, :show]
+    patch 'api/cart_items', to: 'cart_items#checkout'
+    #maybe not api?
   end
 
 end

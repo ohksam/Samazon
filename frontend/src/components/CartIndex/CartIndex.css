@@ -69,14 +69,40 @@
     height: auto;
 }
 
-/* #cartItemNameAndQuant {
-    
-} */
+#cartItemEditOptions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#changeQuantityOrDelete {
+    margin-bottom: 5px;
+}
+
+#cartItemQuantityDropdown {
+    padding: 6px 8px;
+    border: 1px solid #A9A9A9;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    color: #111111;
+    font-size: 14px;
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+#cartItemDelet {
+    margin-left: 5px;
+}
 
 #cartItemQuantityDropdown {
     background-color: #EAEDED;
     padding: 2px;
     border-radius: 5px;
+}
+
+#quantityTimesPrice {
+    position: relative;
+    margin-left: auto;
 }
 
 #cartIndexRight {
