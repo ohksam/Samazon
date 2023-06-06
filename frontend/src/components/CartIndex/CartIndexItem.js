@@ -14,7 +14,7 @@ const CartIndexItem = ({ cartItem }) => {
     const newQuantity = parseInt(e.target.value);
     setQuantity(newQuantity);
     
-    console.log(cartItem)
+    // console.log(cartItem)
     dispatch(updateCartItem({ quantity: newQuantity, ...cartItem }));
   }
 

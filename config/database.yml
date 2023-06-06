@@ -84,3 +84,4 @@ production:
   database: Samazon_production
   username: Samazon
   password: <%= ENV["SAMAZON_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
