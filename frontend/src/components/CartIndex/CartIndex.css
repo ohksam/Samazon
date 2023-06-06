@@ -73,6 +73,12 @@
     
 } */
 
+#cartItemQuantityDropdown {
+    background-color: #EAEDED;
+    padding: 2px;
+    border-radius: 5px;
+}
+
 #cartIndexRight {
     margin-top: 20px;
     display: flex;

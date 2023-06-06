@@ -15,6 +15,7 @@ const CartIndex = () => {
 
     const CartListItems = cartItems.map((cartItem) => <CartIndexItem cartItem={cartItem}/>)
 
+
     const cartTotal = 0.00;
 
     const handleCheckout = (e) => {
@@ -22,6 +23,9 @@ const CartIndex = () => {
 
         //checkout logic (set current cart_items boolean to true)
     }
+
+
+
 
     return (
         <div id='cartIndexContainer'>

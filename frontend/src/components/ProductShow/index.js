@@ -24,6 +24,7 @@ const ProductShow = () => {
 
     const descriptionList = product.description.split('.'); //slice for testing
     const descriptionListItems = descriptionList.map((sentence) => <li key={Math.random()}>{sentence}</li>)
+    // if you want, you can make an array of [1-5] and then .shift for each key
 
     const handleAddToCart = (e) => {
         e.preventDefault();
