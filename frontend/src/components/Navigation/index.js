@@ -16,6 +16,19 @@ const Navigation = () => {
       <ProfileButton user={sessionUser} />
     )
 
+
+    //maybe useEffect and useState it?
+
+    // const sessionCartItems = useSelector(state => Object.values(state.cartItems));
+    // let numCartItems = 0;
+    // sessionCartItems.forEach(item => cartItemCount += item.quantity)
+    // const cartItemCount = sessionUser ? numCartItems : 0;
+
+    // useEffect(() => {
+
+    // }, [])
+    //
+
     const categories = ['books', 'electronics', 'home', 'active', 'food'];
     const categoryButtons = categories.map(category => (
       
@@ -24,10 +37,13 @@ const Navigation = () => {
       </NavLink>
     ))
 
-    if (location.pathname.includes('signup') || location.pathname.includes('login')) 
-      { return null 
+
+
+
+    if (location.pathname.includes('signup') || location.pathname.includes('login')) {
+      return null 
       } else {
-    return (
+      return (
       <div id="entireNavBar">
         <div id="topNavBar">
             <div className="navLeft">
@@ -70,7 +86,7 @@ const Navigation = () => {
               </div>
               <div id='cartStuff'>
                 <a href='/cart'>
-                <span>0</span>
+                <span id='cartItemCount'>0</span>
                   <img id='cartImage' src={cartIcon} />
                 </a>
               </div>

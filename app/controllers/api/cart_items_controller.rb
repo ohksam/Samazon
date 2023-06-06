@@ -1,7 +1,7 @@
 class Api::CartItemsController < ApplicationController
 
     def index
-        @cart_items = current_user.cart_items.where(purchased: false)
+        @cart_items = current_user.cart_items #.where(purchased: false) could do this here ORRR on the front end o.o
         render :index
     end
 
