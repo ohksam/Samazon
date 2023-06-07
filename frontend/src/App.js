@@ -35,6 +35,12 @@ function App() {
         <Route path='/cart' exact>
           <CartIndex />
         </Route>
+        <Route path='/checkedout'>
+          {/* ThankYouPage */}
+        </Route>
+        <Route path='/history'>
+          {/* OrderHistory */}
+        </Route>
       </Switch>
     </>
   );

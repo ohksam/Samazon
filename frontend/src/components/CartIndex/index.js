@@ -3,12 +3,14 @@ import { useDispatch, useSelector } from "react-redux";
 import CartIndexItem from './CartIndexItem';
 import { fetchCartItems, thunkCheckout } from "../../store/cart_items";
 import './CartIndex.css';
+import { useHistory } from "react-router-dom";
 
 
 const CartIndex = () => {
     const dispatch = useDispatch();
     const cartItems = useSelector(state => Object.values(state.cartItems).filter(item => item.purchased === false));
     // don't need the cartitems in the state because they won't even show up if they're not there.
+    const history = useHistory();
 
     useEffect(() => {
         dispatch(fetchCartItems())
@@ -27,10 +29,12 @@ const CartIndex = () => {
     const handleCheckout = (e) => {
         e.preventDefault();
 
+        if (cartItems.length === 0) {return null}
+
         const cartItemIDs = cartItems.map(item => item.id);
         dispatch(thunkCheckout(cartItemIDs));
+        history.push('/checkedout')
     }
-
 
 
 

@@ -3,6 +3,7 @@
     justify-content: space-evenly;
     background-color: #EAEDED;
     width: 100%;
+    min-height: 150px;
 }
 
 #cartIndexLeft {

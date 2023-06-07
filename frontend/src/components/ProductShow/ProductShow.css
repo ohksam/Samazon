@@ -126,6 +126,7 @@
     background: #ffa41c;
     border-color: transparent;
     font-size: 13px;
+    cursor: not-allowed;
 }
 
 /* top half product, bottom half review */
