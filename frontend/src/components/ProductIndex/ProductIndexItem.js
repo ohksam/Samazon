@@ -4,11 +4,11 @@ import Placeholder from '../../assets/images/Placeholder.jpg';
 
 const ProductIndexItem = ({product}) => {
 
-  const productImage = product.photo ? product.photo.url : Placeholder;
+  const productImage = product.photoUrl || Placeholder;
 
     return (
       <div id="productContainer">
-          <div id="productListingImage">
+          <div id="productListingImageDiv">
             <Link to={`/products/${product.id}`}>
               <img src={productImage}/>
             </Link>

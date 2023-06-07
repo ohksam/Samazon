@@ -9,6 +9,7 @@ import { deleteCartItem } from "../../store/cart_items";
 const CartIndexItem = ({ cartItem }) => {
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState(cartItem.quantity);
+  const cartImage = cartItem.product.photoUrl || Placeholder;
 
   const handleAdjustQuantity = (e) => {
     const newQuantity = parseInt(e.target.value);
@@ -33,12 +34,13 @@ const CartIndexItem = ({ cartItem }) => {
   // ***the .product association doesn't give me access to the product??
   // const cartImage = cartItem.product.photo ? cartItem.product.photo.url : Placeholder;
   // const product = Product.find() <-- how to do this in js :(
-  const cartImage = Placeholder;
+  // const cartImage = Placeholder;
+
 
   return (
     <>
     <div id='cartItemContainer'>
-      <div id='cartItemImage'>
+      <div id='cartItemImageContainer'>
         <Link to={`/products/${cartItem.productId}`}>
           <img id="cartImg" src={cartImage} alt='cartItemImage' />
         </Link>

@@ -37,7 +37,7 @@ const LoginFormPage = () => {
 
     const handleDemo = (e) => {
         e.preventDefault();
-        return dispatch(sessionActions.login({email: "John@cena.com", password: "youcantseeme"}))
+        return dispatch(sessionActions.login({email: "john@cena.com", password: "youcantseeme"}))
     }
 
     return (

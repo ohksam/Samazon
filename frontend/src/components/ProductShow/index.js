@@ -11,9 +11,9 @@ const ProductShow = () => {
     const { productId } = useParams();
     const dispatch = useDispatch();
     const product = useSelector(getProduct(productId));
+    const productImage = product.photoUrl || Placeholder;
     const history = useHistory();
     const currentUser = useSelector(state => state.session.user);
-
     const [quantity, setQuantity] = useState(1);
 
     useEffect(() => {
@@ -22,7 +22,7 @@ const ProductShow = () => {
 
     if (!product) return null; //or return 'product not found :('
 
-    const descriptionList = product.description.split('.'); //slice for testing
+    const descriptionList = product.description.split('*'); //slice for testing
     const descriptionListItems = descriptionList.map((sentence) => <li key={Math.random()}>{sentence}</li>)
     // if you want, you can make an array of [1-5] and then .shift for each key
 
@@ -45,19 +45,19 @@ const ProductShow = () => {
             <div id="productShowDiv">
                 <div id="productShowLeft">
                   <div id="productShowImageDiv">
-                      <img src={Placeholder} alt='placeholder' />
+                      <img src={productImage} alt='placeholder' />
                   </div>
                 </div>
                 <div id="productShowMiddle">
                   <div id="productShowInfo">
                     <h1 id='productName'>{product.name}</h1>
-                    <h2 id='productRating'>product.rating</h2>
+                    <p id='productRating'>product rating</p>
                     <hr id='midDivide'></hr>
-                    <h2 id='productPrice'>${product.price}</h2>
+                    <p id='productPrice'>${product.price}</p>
                   </div>
-                  <div id="productShowDescriptionDiv">
+                  <ul id="productShowDescriptionList">
                     {descriptionListItems}
-                  </div>
+                  </ul>
                 </div>
                 <div id="productShowRight">
                   <div id="productAddToCartDiv">
