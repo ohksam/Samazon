@@ -12,21 +12,22 @@ const CartIndexItem = ({ cartItem }) => {
 
   const handleAdjustQuantity = (e) => {
     const newQuantity = parseInt(e.target.value);
-    setQuantity(newQuantity);
-    
-    // console.log(cartItem)
-    dispatch(updateCartItem({ quantity: newQuantity, ...cartItem }));
+    setQuantity(newQuantity); //apparently this is async??
+
+    // const updatedItem = {quantity: newQuantity, ...cartItem};
+    const updatedItem2 = {...cartItem, quantity: newQuantity};
+    // console.log(updatedItem)
+    console.log(updatedItem2)
+    dispatch(updateCartItem(updatedItem2));
   }
+
+
 
   const handleDelete = (e) => {
     e.preventDefault();
 
     dispatch(deleteCartItem(cartItem.id))
   }
-
-  // useEffect(() => {
-  //   dispatch(fetchCartItem(cartItem.id))
-  // }, [])
 
 
   // ***the .product association doesn't give me access to the product??
@@ -35,6 +36,7 @@ const CartIndexItem = ({ cartItem }) => {
   const cartImage = Placeholder;
 
   return (
+    <>
     <div id='cartItemContainer'>
       <div id='cartItemImage'>
         <Link to={`/products/${cartItem.productId}`}>
@@ -62,8 +64,12 @@ const CartIndexItem = ({ cartItem }) => {
           <button id='cartItemDelet' onClick={handleDelete}>TO THE TRASH</button>
         </div>
       </div>
-      <div id='quantityTimesPrice'>{quantity} x ${cartItem.product.price}</div>
+      <div id='quantityTimesPrice'>
+        {quantity} x ${cartItem.product.price}
+      </div>
     </div>
+    <hr id='cartItemDividers'></hr>
+    </>
   )
 }
 

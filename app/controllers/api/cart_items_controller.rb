@@ -1,7 +1,9 @@
 class Api::CartItemsController < ApplicationController
 
-    def index
+    def index #params will say 'history' or 'cart' which will dictate purchased:true or false
         @cart_items = current_user.cart_items #.where(purchased: false) could do this here ORRR on the front end o.o
+        
+        # @products = @cart_items.products
         render :index
     end
 
@@ -29,10 +31,19 @@ class Api::CartItemsController < ApplicationController
     end
 
     def checkout
-        #take in an array, iterate through it and update each one?
-        #cart_items.each do |item|
+        item_ids = params[:cartItemsIds]
+        # debugger
+        # @cart_items = CartItem.where(id: item_ids)
 
-        #end
+        item_ids.each do |id|
+            cart_item = CartItem.find_by(id: id)
+            cart_item.update(purchased: true)
+        end
+
+        # debugger
+        # @cart_items.update_all(purchased: true)
+
+        # render :index
     end
 
     def destroy
@@ -45,6 +56,6 @@ class Api::CartItemsController < ApplicationController
     private
 
     def item_params 
-        params.require(:cart_item).permit(:customer_id, :product_id, :quantity, :purchased)
+        params.require(:cart_item).permit(:id, :customer_id, :product_id, :quantity, :purchased)
     end
 end

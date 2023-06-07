@@ -16,7 +16,7 @@ const Navigation = () => {
       <ProfileButton user={sessionUser} />
     )
 
-    const cartItems = useSelector(state => Object.values(state.cartItems));
+    const cartItems = useSelector(state => Object.values(state.cartItems).filter(item => item.purchased === false));
     let numCartItems = 0;
     cartItems.forEach(item => numCartItems += item.quantity);
 

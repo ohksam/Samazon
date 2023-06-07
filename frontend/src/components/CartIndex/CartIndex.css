@@ -12,6 +12,7 @@
     width: 1000px;
     flex-direction: column;
     padding: 10px;
+    margin-bottom: 20px;
 }
 
 #cartHeader {
@@ -50,7 +51,6 @@
 #allCartItems {
     display: flex;
     flex-direction: column;
-
 }
 
 #cartItemContainer {
@@ -80,10 +80,10 @@
 }
 
 #cartItemQuantityDropdown {
-    padding: 6px 8px;
+    padding: 2px;
     border: 1px solid #A9A9A9;
-    border-radius: 4px;
-    background-color: #FFFFFF;
+    border-radius: 5px;
+    background-color: #EAEDED;
     color: #111111;
     font-size: 14px;
     line-height: 1.5;
@@ -94,15 +94,15 @@
     margin-left: 5px;
 }
 
-#cartItemQuantityDropdown {
-    background-color: #EAEDED;
-    padding: 2px;
-    border-radius: 5px;
-}
-
 #quantityTimesPrice {
     position: relative;
     margin-left: auto;
+}
+
+#cartItemDividers {
+    width: 100%;
+    /* margin-top: 0; */
+    border-top: 1px solid rgb(214, 212, 212);
 }
 
 #cartIndexRight {

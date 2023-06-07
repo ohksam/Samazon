@@ -1,13 +1,14 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import CartIndexItem from './CartIndexItem';
-import { fetchCartItems } from "../../store/cart_items";
+import { fetchCartItems, thunkCheckout } from "../../store/cart_items";
 import './CartIndex.css';
 
 
 const CartIndex = () => {
     const dispatch = useDispatch();
-    const cartItems = useSelector(state => Object.values(state.cartItems));
+    const cartItems = useSelector(state => Object.values(state.cartItems).filter(item => item.purchased === false));
+    // don't need the cartitems in the state because they won't even show up if they're not there.
 
     useEffect(() => {
         dispatch(fetchCartItems())
@@ -26,11 +27,8 @@ const CartIndex = () => {
     const handleCheckout = (e) => {
         e.preventDefault();
 
-        alert('yay checkout!') 
-
-        //checkout logic (set current cart_items boolean to true)
-        // DO I NEED TO FOREACH ITEM AND DISPATCH UPDATE?!?!?!?
-        // pls no
+        const cartItemIDs = cartItems.map(item => item.id);
+        dispatch(thunkCheckout(cartItemIDs));
     }
 
 
@@ -50,12 +48,12 @@ const CartIndex = () => {
               </div>
                 <div id='allCartItems'>
                   {CartListItems}
-                  <p>go buy some items or something</p>
+                  {/* <p>go buy some items or something</p> */}
                 </div>
           </div>
           <div id='cartIndexRight'>
               <div>
-                <span>Subtotal ({subtotalText}): </span><span id='subtotalSpan'>${cartTotal}</span>
+                <span>Subtotal ({subtotalText}): </span><span id='subtotalSpan'>${cartTotal.toFixed(2)}</span>
               </div>
               <button id='checkoutButton' onClick={handleCheckout}>Complete Purchase</button>
           </div>
