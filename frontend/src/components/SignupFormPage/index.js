@@ -49,13 +49,16 @@ const SignupFormPage = () => {
                   <img src={samazonLogo}/>
               </NavLink>
             </div>
+
+            <div id='errorsDiv'>
+            <ul id='errorsList'>
+                    {errors ? errors.map(error => <li key={error}>{error}</li>) : null} 
+            </ul>
+            </div>
             <div id="signupFormBox">
             <h1 id="signupHeader">Create account</h1>
             <form id='signupForm' onSubmit={handleSubmit}>
                 {/* placeholder error handling */}
-                <ul>
-                    {errors ? errors.map(error => <li key={error}>{error}</li>) : null} 
-                </ul>
                 <label>Name<br />
                     <input 
                       type="text"

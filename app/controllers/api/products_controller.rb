@@ -3,6 +3,7 @@ class Api::ProductsController < ApplicationController
     def index
         @products = Product.all
         # @products = Product.where(category: (params[:category]))
+        #can also add reviews here :O
         render :index
     end
 

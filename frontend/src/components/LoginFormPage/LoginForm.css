@@ -36,8 +36,14 @@
     flex-direction: column;
 }
 
-#loginErrors {
+#errorsDiv {
+    margin: 20px;
     display: flex;
+}
+
+#errorsList {
+    margin-bottom: 20px;
+    color: red;
 }
 
 #loginForm input {

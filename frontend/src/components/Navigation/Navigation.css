@@ -131,6 +131,7 @@
     border-top: none;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     z-index: 1;
+    padding: 10px;
 }
 
 #signXButton {
@@ -145,11 +146,12 @@
     border-width: 1px;
     cursor: pointer;
     display: inline-block;
-    padding: 0;
     text-align: center;
     vertical-align: middle;
     line-height: 30px;
     font-size: 13px;
+    margin: 2px;
+    margin-bottom: 10px;
 }
 
 #signXButton:hover {

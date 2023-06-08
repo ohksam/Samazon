@@ -33,7 +33,7 @@ const CartIndex = () => {
 
         const cartItemIDs = cartItems.map(item => item.id);
         dispatch(thunkCheckout(cartItemIDs));
-        history.push('/checkedout')
+        history.push('/thankyou')
     }
 
 

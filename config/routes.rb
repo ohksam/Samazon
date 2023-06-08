@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     resources :products, only: [:show, :index]
     resources :cart_items, except: [:new, :edit, :show]
     patch '/cart_items', to: 'cart_items#checkout'
+    resources :reviews, except: [:new, :edit]
   end
 
   get '*path', to: "static_pages#frontend_index"

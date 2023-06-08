@@ -5,10 +5,12 @@ import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
 import Navigation from "./components/Navigation";
 import HomePage from "./components/HomePage";
-// import Modal from './components/Modal';
 import ProductShow from "./components/ProductShow";
 import ProductIndex from './components/ProductIndex';
 import CartIndex from './components/CartIndex';
+import ThankYouPage from './components/ThankYouPage';
+// import OrderHistory from './components/OrderHistory';
+// import Footer from './components/Footer';
 
 
 function App() {
@@ -16,6 +18,7 @@ function App() {
   return (
     <>
       <Navigation />
+      {/* <Footer /> */}
       <Switch>
         <Route path='/' exact>
           <HomePage />
@@ -35,8 +38,8 @@ function App() {
         <Route path='/cart' exact>
           <CartIndex />
         </Route>
-        <Route path='/checkedout'>
-          {/* ThankYouPage */}
+        <Route path='/thankyou'>
+          <ThankYouPage />
         </Route>
         <Route path='/history'>
           {/* OrderHistory */}
