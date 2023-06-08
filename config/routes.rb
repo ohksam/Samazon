@@ -9,10 +9,11 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     resources :users, only: :create
     resource :session, only: [:show, :create, :destroy]
-    resources :products, only: [:show, :index]
+    resources :products, only: [:show, :index] 
+      # resources :reviews, only: :index <-- nested do/end ^
     resources :cart_items, except: [:new, :edit, :show]
     patch '/cart_items', to: 'cart_items#checkout'
-    resources :reviews, except: [:new, :edit]
+    resources :reviews, except: [:new, :edit] #put index there later
   end
 
   get '*path', to: "static_pages#frontend_index"

@@ -28,14 +28,16 @@ const removeReview = (reviewId) => {
 }
 
 // custom selectors if necessary
+export const getReviews = (state) => state.reviews ? Object.values(state.reviews) : []
 
 // THUNKs
 export const fetchReviews = (productId) => async dispatch => {
-    const response = await csrfFetch('/api/reviews')
+    const response = await csrfFetch(`/api/reviews/?product_id=${productId}`)
     const reviews = await response.json();
 
     dispatch(receiveReviews(reviews))
 }
+// more conventional would be a nested route /api/products/review
 
 export const fetchReview = (reviewId) => async dispatch => {
     const response = await csrfFetch(`/api/reviews/${reviewId}`)
@@ -65,7 +67,7 @@ export const updateReview = (review) => async dispatch => {
 }
 
 export const deleteReview = (reviewId) => async dispatch => {
-    const response = await csrfFetch('/api/reviews', {
+    await csrfFetch('/api/reviews', {
         method: 'DELETE'
     })
     dispatch(removeReview(reviewId))

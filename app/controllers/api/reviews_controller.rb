@@ -11,7 +11,8 @@ class Api::ReviewsController < ApplicationController
     end
 
     def index
-        @reviews = Review.#where(product_id: params[:product_id])
+        @reviews = Review.where(product_id: params[:product_id].to_i)
+        # debugger
         
         render :index
     end
@@ -22,7 +23,7 @@ class Api::ReviewsController < ApplicationController
         if @review.save
             render :show
         else
-            render json: errors: @review.errors.full_messages, status: 422
+            render json: { errors: @review.errors.full_messages }, status: 422
         end
     end
 
@@ -32,7 +33,8 @@ class Api::ReviewsController < ApplicationController
         if @review&.update(review_params)
             render :show
         else
-            render json: {error: 'Failed to update review' } status: 422
+            render json: {error: 'Failed to update review' }, status: 422
+        end
     end
 
     def destroy

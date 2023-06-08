@@ -21,9 +21,10 @@
 }
 
 /* don't be so general with h1 this needs to get separated for transactionDiv... */
-#productShowPage h1 {
+/* #productShowPage h1 {
     font-size: xx-large;
-}
+} */
+
 
 /* LEFT */
 #productShowLeft {
@@ -60,14 +61,19 @@
     /* justify-content: space-between; */
 }
 
+#productShowName {
+    font-size: xx-large;
+}
+
 #midDivide {
     width: 100%;
 }
 
 #productPrice {
-    font-size: 26px;
+    font-size: xx-large;
     margin-top: 10px;
     margin-bottom: 20px;
+    /* color: aquamarine; */
 }
 
 /* find a better way to do this */
@@ -84,7 +90,7 @@
     justify-content: center;
     width: 15%;
     transform: translateX(-10px)
-    /* ^that feels a lil hamfisted */
+        /* ^that feels a lil hamfisted */
 }
 
 #productAddToCartDiv {
@@ -98,7 +104,7 @@
     height: 300px;
 }
 
-#productAddToCartDiv > * {
+#productAddToCartDiv>* {
     margin: 7px 0;
 }
 
@@ -119,7 +125,7 @@
     height: 33px;
     width: 100%;
     border-radius: 15px;
-    box-shadow: 0 2px 5px 0 rgba(213,217,217,.5);
+    box-shadow: 0 2px 5px 0 rgba(213, 217, 217, .5);
     background: #FFD814;
     border-color: #FCD200;
     border-style: solid;
@@ -133,12 +139,17 @@
     height: 33px;
     width: 100%;
     border-radius: 15px;
-    box-shadow: 0 2px 5px 0 rgba(213,217,217,.5);
+    box-shadow: 0 2px 5px 0 rgba(213, 217, 217, .5);
     background: #ffa41c;
     border-color: transparent;
     font-size: 13px;
     cursor: not-allowed;
 }
+
+
+
+
+
 
 /* top half product, bottom half review */
 #productShowDivider {
@@ -146,9 +157,65 @@
     width: 100%;
 }
 
-#productRatingDiv {
+
+
+
+
+#productReviewDiv {
     display: flex;
     flex-direction: row;
     /* justify-content: space-around; */
 }
 
+#productReviewLeft {
+    display: flex;
+    width: 30%;
+}
+
+#customerReviewsHead {
+    font-size: x-large;
+}
+
+#productReviewRight {
+    display: flex;
+    width: 60%;
+}
+
+#individualReviewContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+#individualReviewTitle {
+    font-size: 24px;
+}
+
+.star-rating {
+    display: inline-block;
+}
+
+.star {
+    color: gray;
+    font-size: 24px;
+    text-shadow: 0 0 0 orange;
+}
+
+.filled {
+    color: orange;
+}
+
+#verified {
+    font-size: 14px;
+    color: rgba(228, 126, 2, 0.774);
+}
+
+p {
+    font-size: 16px;
+}
+
+#reviewDate {
+    font-size: 14px;
+    color: gray;
+}

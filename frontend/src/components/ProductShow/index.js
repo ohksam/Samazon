@@ -6,23 +6,28 @@ import Placeholder from '../../assets/images/Placeholder.jpg';
 import './ProductShow.css';
 import { useHistory } from 'react-router-dom';
 import { createCartItem } from "../../store/cart_items";
+import { fetchReviews, getReviews } from "../../store/reviews";
+import ProductReviewItem from "./ProductReviewItem";
 
 const ProductShow = () => {
     const { productId } = useParams();
     const dispatch = useDispatch();
     const product = useSelector(getProduct(productId));
-    const productImage = product.photoUrl || Placeholder;
+    const productImage = product?.photoUrl || Placeholder;
     const history = useHistory();
     const currentUser = useSelector(state => state.session.user);
     const [quantity, setQuantity] = useState(1);
+    const reviews = useSelector(getReviews)
 
     useEffect(() => {
         dispatch(fetchProduct(productId))
+        dispatch(fetchReviews(productId))
+        
     }, [dispatch, productId])
 
     if (!product) return null; //or return 'product not found :('
 
-    const descriptionList = product.description.split('*'); //slice for testing
+    const descriptionList = product.description.split('*');
     const descriptionListItems = descriptionList.map((sentence) => <li key={Math.random()}>{sentence}</li>)
     // if you want, you can make an array of [1-5] and then .shift for each key
 
@@ -40,6 +45,9 @@ const ProductShow = () => {
         }
     }
 
+    const ProductReviewList = reviews.map((review) => <ProductReviewItem review={review}/>)
+
+
     return (
         <div id="productShowPage">
             <div id="productShowDiv">
@@ -50,10 +58,10 @@ const ProductShow = () => {
                 </div>
                 <div id="productShowMiddle">
                   <div id="productShowInfo">
-                    <h1 id='productName'>{product.name}</h1>
+                    <h1 id='productShowName'>{product.name}</h1>
                     <p id='productRating'>product rating</p>
                     <hr id='midDivide'></hr>
-                    <p id='productPrice'>${product.price}</p>
+                    <p id='midProductPrice'>${product.price}</p>
                   </div>
                   <ul id="productShowDescriptionList">
                     {descriptionListItems}
@@ -87,8 +95,21 @@ const ProductShow = () => {
 
             <hr id="productShowDivider"></hr>
 
-            <div id="productRatingDiv">
-              <h1>Customer reviews</h1>
+
+            <div id="productReviewDiv">
+
+              <div id='productReviewLeft'>
+                <div id="productReviewSummary">
+                  <h1 id='customerReviewsHead'>Customer reviews</h1>
+                  
+                </div>
+              </div>
+
+              <div id='productReviewRight'>
+                <div id='productReviews'>
+                  {ProductReviewList}
+                </div>
+              </div>
             </div>
         </div>
     )
