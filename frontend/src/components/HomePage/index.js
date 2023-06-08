@@ -4,6 +4,7 @@ import booksImage from '../../assets/images/StockBooks.jpg';
 import homeImage from '../../assets/images/HomeDecor.jpg';
 import gamesImage from '../../assets/images/VideoGame.jpg';
 import sportsImage from '../../assets/images/Sports.jpg';
+import { NavLink } from 'react-router-dom';
 
 const HomePage = () => {
     return (
@@ -13,19 +14,27 @@ const HomePage = () => {
         <div id='directoryContainer'>
             <div className='containers'>
               <h1>Books</h1>
-              <img src={booksImage}></img>
+              <NavLink to='/categories/books'>
+              <img src={booksImage} alt='booksImage'/>
+              </NavLink>
             </div>
             <div className='containers'>
               <h1>Home Decor</h1>
-              <img src={homeImage}></img>
+              <NavLink to='/categories/home'>
+              <img src={homeImage} alt='homeImage'/>
+              </NavLink>
             </div>
             <div className='containers'>
               <h1>Video Games</h1>
-              <img src={gamesImage}></img>
+              <NavLink to='/categories/electronics'>
+              <img src={gamesImage} alt='gamesImage'/>
+              </NavLink>
             </div>
             <div className='containers'>
               <h1>Sports and Active</h1>
-              <img src={sportsImage}></img>
+              <NavLink to='/categories/active'>
+              <img src={sportsImage} alt='sportsImage'/>
+              </NavLink>
             </div>
         </div>
         </>

@@ -105,6 +105,10 @@
     align-items: center;
 }
 
+#sessionButton {
+    position: relative;
+}
+
 #helloButton {
     padding: 8px;
     background-color: #232F3E;
@@ -119,8 +123,8 @@
 
 #dropdownMenu {
     position: absolute;
-    top: 50px;
-    right: 13%;
+    /* top: 50px; */
+    /* right: 13%; */
     width: 200px;
     background-color: white;
     border: 1px solid #ddd;

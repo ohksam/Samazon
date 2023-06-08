@@ -41,13 +41,15 @@
 }
 
 #productListingImageDiv img:hover {
-    scale: 1.05;
+    scale: 1.02;
 }
 
 #productListingName {
     color: rgb(36, 36, 182);
+    text-decoration: none;
 }
 
 #productListingName:hover {
-    color: orange
+    color: orange;
+    text-decoration: underline;
 }
