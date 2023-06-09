@@ -5,6 +5,7 @@
     font-size: 14px;
     max-width: 100%vw;
     text-align: center;
+    margin-top: 100px;
   }
   
   #upper-bar {
@@ -17,6 +18,7 @@
     background-color: #ff9900;
     height: 5px;
     margin-top: 10px;
+    margin-bottom: 8px;
   }
   
   #technology-list {
@@ -32,3 +34,6 @@
     margin: 0 10px;
   }
   
+  #copyright {
+    font-size: x-small;
+  }

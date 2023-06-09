@@ -28,6 +28,10 @@
     font-weight: bold;
 }
 
+#thank-you-bottom-filler {
+    height: 250px
+}
+
 #thank-you-footer {
     text-align: center;
     font-size: 14px;
