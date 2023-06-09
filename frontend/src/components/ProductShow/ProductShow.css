@@ -157,27 +157,33 @@
     width: 100%;
 }
 
-
-
-
-
 #productReviewDiv {
     display: flex;
     flex-direction: row;
     /* justify-content: space-around; */
 }
 
+
+/* left side of reviews */
 #productReviewLeft {
     display: flex;
     width: 30%;
+    justify-content: center;
 }
 
 #customerReviewsHead {
-    font-size: x-large;
+    font-size: 32px;
 }
 
+
+
+
+
+
+/* right side of reviews */
 #productReviewRight {
     display: flex;
+    flex-direction: column;
     width: 60%;
 }
 
@@ -192,14 +198,25 @@
     font-size: 24px;
 }
 
+.aveStar {
+    color: transparent;
+    font-size: 24px
+}
+
+.aveStarFilled {
+    font-size: 24px;
+    color: orange;
+}
+
+
 .star-rating {
     display: inline-block;
 }
 
 .star {
-    color: gray;
+    color: transparent;
     font-size: 24px;
-    text-shadow: 0 0 0 orange;
+    /* text-shadow: 0 0 0 orange; */
 }
 
 .filled {
@@ -211,11 +228,82 @@
     color: rgba(228, 126, 2, 0.774);
 }
 
-p {
-    font-size: 16px;
-}
-
 #reviewDate {
     font-size: 14px;
     color: gray;
 }
+
+
+
+
+#productReviewFormContainer {
+    margin-top: 50px;
+    display: flex;
+    margin-bottom: 50px;
+    flex-direction: column;
+    max-width: 400px;
+}
+
+
+
+
+
+#reviewThisProduct {
+    margin-bottom: 25px;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+/* review form */
+#reviewForm {
+    display: flex;
+    flex-direction: column;
+    
+    /* max-width: 600px; */
+    /* margin: 0 auto; */
+    /* padding: 20px; */
+    /* font-family: Arial, sans-serif; */
+  }
+  
+  #reviewForm label {
+    /* display: block; */
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  #reviewForm input,
+  #reviewForm textarea {
+    /* margin-top: 5px; */
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  #reviewForm select {
+    width: 10%;
+    /* padding: 10px; */
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;    
+  }
+  
+  #reviewForm button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #f0c14b;
+    border: none;
+    color: #111;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  #reviewForm button:hover {
+    background-color: #ddb347;
+  }
+  
+  #reviewForm button:active {
+    background-color: #d2a634;
+  }
+  

@@ -80,7 +80,7 @@ const reviewsReducer = (state = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_REVIEWS:
-            return {...state, ...action.reviews};
+            return {...action.reviews};
         case RECEIVE_REVIEW:
             nextState[action.review.id] = action.review;
             return nextState;

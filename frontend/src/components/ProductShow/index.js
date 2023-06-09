@@ -8,6 +8,7 @@ import { useHistory } from 'react-router-dom';
 import { createCartItem } from "../../store/cart_items";
 import { fetchReviews, getReviews } from "../../store/reviews";
 import ProductReviewItem from "./ProductReviewItem";
+import ProductReviewForm from "./ProductReviewForm";
 
 const ProductShow = () => {
     const { productId } = useParams();
@@ -17,7 +18,7 @@ const ProductShow = () => {
     const history = useHistory();
     const currentUser = useSelector(state => state.session.user);
     const [quantity, setQuantity] = useState(1);
-    const reviews = useSelector(getReviews)
+    const reviews = useSelector(getReviews);
 
     useEffect(() => {
         dispatch(fetchProduct(productId))
@@ -25,7 +26,7 @@ const ProductShow = () => {
         
     }, [dispatch, productId])
 
-    if (!product) return null; //or return 'product not found :('
+    // if (!product) return null; //or return 'product not found :('
 
     const descriptionList = product.description.split('*');
     const descriptionListItems = descriptionList.map((sentence) => <li key={Math.random()}>{sentence}</li>)
@@ -47,6 +48,19 @@ const ProductShow = () => {
 
     const ProductReviewList = reviews.map((review) => <ProductReviewItem review={review}/>)
 
+    // const averageRatingStars = () => {
+      let averageRating = 0;
+      let numRatings = reviews.length;
+      if (reviews.length > 0) {
+        reviews.forEach(review => averageRating += review.rating)
+      }
+      let finalAverage = Math.floor(averageRating / numRatings);
+      if (!numRatings) finalAverage = 0;
+
+      let averageStars = Array.from({length: 5}, (_, index) => (
+        <span key={index} className={index < finalAverage ? 'aveStarFilled' : 'aveStar'}>&#9733;</span>
+      ))
+    // }
 
     return (
         <div id="productShowPage">
@@ -59,7 +73,7 @@ const ProductShow = () => {
                 <div id="productShowMiddle">
                   <div id="productShowInfo">
                     <h1 id='productShowName'>{product.name}</h1>
-                    <p id='productRating'>product rating</p>
+                    <p id='productRating'>Average rating: {averageStars}</p>
                     <hr id='midDivide'></hr>
                     <p id='midProductPrice'>${product.price}</p>
                   </div>
@@ -84,6 +98,8 @@ const ProductShow = () => {
                         <option value="5">5</option>
                         <option value="6">6</option>
                         <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
                       </select>
 
                       <button id='addToCartButton'>Add to Cart</button>
@@ -101,6 +117,7 @@ const ProductShow = () => {
               <div id='productReviewLeft'>
                 <div id="productReviewSummary">
                   <h1 id='customerReviewsHead'>Customer reviews</h1>
+                  <h2 id='customerReviewsAve'>{averageStars} Avg: {finalAverage} out of 5</h2>
                   
                 </div>
               </div>
@@ -108,6 +125,11 @@ const ProductShow = () => {
               <div id='productReviewRight'>
                 <div id='productReviews'>
                   {ProductReviewList}
+                </div>
+
+                <div id='productReviewFormContainer'>
+                  <h1 id="reviewThisProduct">Review this product</h1>
+                  <ProductReviewForm product={product}/>
                 </div>
               </div>
             </div>
