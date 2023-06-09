@@ -16,25 +16,15 @@ const CartIndexItem = ({ cartItem }) => {
     setQuantity(newQuantity); //apparently this is async??
 
     // const updatedItem = {quantity: newQuantity, ...cartItem};
-    const updatedItem2 = {...cartItem, quantity: newQuantity};
-    // console.log(updatedItem)
-    console.log(updatedItem2)
-    dispatch(updateCartItem(updatedItem2));
+    const updatedItem = {...cartItem, quantity: newQuantity};
+    dispatch(updateCartItem(updatedItem));
   }
-
-
 
   const handleDelete = (e) => {
     e.preventDefault();
 
     dispatch(deleteCartItem(cartItem.id))
   }
-
-
-  // ***the .product association doesn't give me access to the product??
-  // const cartImage = cartItem.product.photo ? cartItem.product.photo.url : Placeholder;
-  // const product = Product.find() <-- how to do this in js :(
-  // const cartImage = Placeholder;
 
 
   return (
@@ -63,7 +53,7 @@ const CartIndexItem = ({ cartItem }) => {
             <option value="8">8</option>
             <option value="9">9</option>
           </select>
-          <button id='cartItemDelet' onClick={handleDelete}>TO THE TRASH</button>
+          <button id='cartItemDelet' onClick={handleDelete}>Delete</button>
         </div>
       </div>
       <div id='quantityTimesPrice'>

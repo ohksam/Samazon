@@ -16,9 +16,9 @@ const ProductIndexItem = ({product}) => {
           <Link id="productListingName" to={`/products/${product.id}`}>
             {product.name}
           </Link>
-          <div id="productListingRating">
+          {/* <div id="productListingRating">
             Rating: average product rating
-          </div>
+          </div> */}
           <div id="productListingPrice">
             ${product.price}
           </div>

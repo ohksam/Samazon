@@ -11,11 +11,11 @@ const ThankYouPage = () => {
                 <p class="thank-you-text">Your order has been placed successfully.</p>
                 <p class="thank-you-text">An email confirmation has been sent to your registered email address.</p>
                 <p class="thank-you-text">Estimated delivery: <span id="thank-you-date">Junuary 48, 2029</span></p>
+            <div id="thankYouHistoryLink">
+                <NavLink to='/history'>View your recent orders</NavLink>
+            </div>
             </div>
             <div id="thank-you-bottom-filler"></div>
-            <div id="thankYouHistoryLink">
-
-            </div>
         </div>
     )
 }

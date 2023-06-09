@@ -179,8 +179,8 @@
 
 #cartItemCount {
     position: relative;
-    top: -16.5px;
-    right: -31px;
+    top: -5px;
+    /* right: -31px; */
     /* background-color: red; */
     color: orange;
     border-radius: 50%;
@@ -195,9 +195,9 @@
     border: 1px solid transparent;
 }
 
-#cartImage:hover {
+/* #cartImage:hover {
     border: 1px solid white;
-}
+} */
 
 #bottomNavBar {
     background-color: #37475A;

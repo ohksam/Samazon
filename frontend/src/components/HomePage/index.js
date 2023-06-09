@@ -27,13 +27,13 @@ const HomePage = () => {
           </NavLink>
         </div>
         <div className='containers'>
-          <h1>Video Games</h1>
+          <h1>Electronics</h1>
           <NavLink to='/categories/electronics'>
             <img src={gamesImage} alt='gamesImage' />
           </NavLink>
         </div>
         <div className='containers'>
-          <h1>Sports and Active</h1>
+          <h1>Sports and Outdoors</h1>
           <NavLink to='/categories/active'>
             <img src={sportsImage} alt='sportsImage' />
           </NavLink>

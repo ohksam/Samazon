@@ -77,6 +77,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: 72%;
 }
 
 #cartItemName {
@@ -101,12 +102,13 @@
 #cartItemDelet {
     margin-left: 5px;
     /* padding: 2px; */
-    /* background-color: pink; */
+    background-color: orange;
+    border-radius: 10px;
 }
 
 #quantityTimesPrice {
     position: relative;
-    margin-right: 0px;
+    right: 0
     
     /* margin-left: 30px; */
 }

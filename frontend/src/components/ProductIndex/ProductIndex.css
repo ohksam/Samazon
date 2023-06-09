@@ -54,3 +54,8 @@
     color: orange;
     text-decoration: underline;
 }
+
+#productListingPrice {
+    margin-top: 5px;
+    font-size: 18px;
+}
