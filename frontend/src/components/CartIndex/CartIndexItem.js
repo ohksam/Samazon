@@ -13,9 +13,8 @@ const CartIndexItem = ({ cartItem }) => {
 
   const handleAdjustQuantity = (e) => {
     const newQuantity = parseInt(e.target.value);
-    setQuantity(newQuantity); //apparently this is async??
+    setQuantity(newQuantity); 
 
-    // const updatedItem = {quantity: newQuantity, ...cartItem};
     const updatedItem = {...cartItem, quantity: newQuantity};
     dispatch(updateCartItem(updatedItem));
   }

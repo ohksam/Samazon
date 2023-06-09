@@ -40,6 +40,7 @@
 
 #shoppingCartPriceDiv > p {
     font-size: 16px;
+    transform: translateX(-60px);
 }
 
 #cartHR {
