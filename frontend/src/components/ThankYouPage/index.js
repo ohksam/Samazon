@@ -1,21 +1,24 @@
 import { NavLink } from "react-router-dom";
+import './ThankYouPage.css'
 
 const ThankYouPage = () => {
 
 
-
-
-
     return (
-        <>
-        {/* grey background like cart, white div for message */}
-        <h1>(some check logo/picture)Order placed, thanks!</h1>
-        <p>Estimated delivery: </p>
-        <div>(images of just-purchased items)</div>
-        <NavLink to='/history'>View recent orders</NavLink>
+        <div id="thank-you-page">
+            <div id="thank-you-content">
+                <h1 id="thank-you-title">Got it, thanks!</h1>
+                <p class="thank-you-text">Your order has been placed successfully.</p>
+                <p class="thank-you-text">An email confirmation has been sent to your registered email address.</p>
+                <p class="thank-you-text">Estimated delivery: <span id="thank-you-date">Junuary 48, 2029</span></p>
+            </div>
+            <div id="thank-you-footer">
+                &copy; 2023 Samazon 
+            </div>
+            <div id="thankYouHistoryLink">
 
-        <button>Continue shopping</button>
-        </>
+            </div>
+        </div>
     )
 }
 

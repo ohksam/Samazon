@@ -9,8 +9,8 @@ import ProductShow from "./components/ProductShow";
 import ProductIndex from './components/ProductIndex';
 import CartIndex from './components/CartIndex';
 import ThankYouPage from './components/ThankYouPage';
-// import OrderHistory from './components/OrderHistory';
-// import Footer from './components/Footer';
+import OrderHistory from './components/OrderHistory';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -18,7 +18,6 @@ function App() {
   return (
     <>
       <Navigation />
-      {/* <Footer /> */}
       <Switch>
         <Route path='/' exact>
           <HomePage />
@@ -38,13 +37,14 @@ function App() {
         <Route path='/cart' exact>
           <CartIndex />
         </Route>
-        <Route path='/thankyou'>
+        <Route path='/thankyou' exact>
           <ThankYouPage />
         </Route>
-        <Route path='/history'>
-          {/* OrderHistory */}
+        <Route path='/history' exact>
+          <OrderHistory />
         </Route>
       </Switch>
+      <Footer />
     </>
   );
 }

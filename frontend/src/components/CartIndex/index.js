@@ -52,7 +52,6 @@ const CartIndex = () => {
               </div>
                 <div id='allCartItems'>
                   {CartListItems}
-                  {/* <p>go buy some items or something</p> */}
                 </div>
           </div>
           <div id='cartIndexRight'>

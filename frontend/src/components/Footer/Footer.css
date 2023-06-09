@@ -1,0 +1,34 @@
+#footer {
+    background-color: #232f3e;
+    color: #ffffff;
+    padding: 20px;
+    font-size: 14px;
+    max-width: 100%vw;
+    text-align: center;
+  }
+  
+  #upper-bar {
+    /* background-color: #131921; */
+    height: 5px;
+    margin-bottom: 10px;
+  }
+  
+  #lower-bar {
+    background-color: #ff9900;
+    height: 5px;
+    margin-top: 10px;
+  }
+  
+  #technology-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  #technology-list li {
+    margin: 0 10px;
+  }
+  

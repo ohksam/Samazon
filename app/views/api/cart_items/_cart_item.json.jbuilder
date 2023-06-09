@@ -1,4 +1,4 @@
-json.extract! cart_item, :id, :quantity, :customer_id, :product_id, :purchased
+json.extract! cart_item, :id, :quantity, :customer_id, :product_id, :purchased, :updated_at
 
 product = cart_item.product
 json.product do

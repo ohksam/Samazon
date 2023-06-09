@@ -18,12 +18,17 @@ const ProductIndex = () => {
         dispatch(fetchProducts())
     }, [dispatch])
 
+    
+    const categoryString = categoryName.toString();
+    const categoryHeader = categoryString.charAt(0).toUpperCase() + categoryString.slice(1);
+
+
     const ProductListItems = products.map((product) => <ProductIndexItem product={product}/>)
 
     return (
         <>
         <div id="bigContainer">
-        <h1 id="indexHeader">{categoryName}</h1>
+        <h1 id="indexHeader">{categoryHeader}</h1>
         <div id="indexContainer">
             {ProductListItems}
         </div>
