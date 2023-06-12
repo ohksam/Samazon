@@ -1,0 +1,4 @@
+name: samazon
+on_build:
+  - name: Reset Database
+    command: bundle exec rails db:reset
