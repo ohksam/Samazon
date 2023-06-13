@@ -11,6 +11,7 @@ require 'open-uri'
 # ApplicationRecord.transaction do 
     puts "Destroying tables..."
     User.destroy_all
+    Product.destroy_all
   
     puts "Resetting primary keys..."
     # from aa.io - for easy testing, so that after seeding, the first `User` has `id` of 1
@@ -27,7 +28,7 @@ require 'open-uri'
 
     User.create!(
       name: 'Demo User',
-      email: 'demo@user.com',
+      email: 'demo@user.io',
       password: 'password'
     )
   
