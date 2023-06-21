@@ -102,7 +102,7 @@ const cartItemsReducer = (state = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_CART_ITEMS:
-            return { ...state, ...action.cartItems };
+            return { ...action.cartItems };
         case RECEIVE_CART_ITEM:
             nextState[action.cartItem.id] = action.cartItem;
             return nextState;
@@ -111,7 +111,7 @@ const cartItemsReducer = (state = {}, action) => {
             return nextState;
         case CHECKOUT_CART:
             // console.log(action)
-            debugger
+            // debugger
             action.cartItemsIds.forEach((cartItemId) => {
                 nextState[cartItemId] = {
                     ...nextState[cartItemId], purchased: true
