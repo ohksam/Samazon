@@ -11,6 +11,7 @@ const ProductReviewItem = ({ review }) => {
   const [editable, setEditable] = useState(false);
   const [editedTitle, setEditedTitle] = useState(review.title);
   const [editedBody, setEditedBody] = useState(review.body);
+  const [editedRating, setEditedRating] = useState(review.rating);
 
   const filledStars = review.rating;
   const stars = Array.from({ length: 5 }, (_, index) => (
@@ -39,7 +40,8 @@ const ProductReviewItem = ({ review }) => {
     const reviewObject = {
       ...review,
       title: editedTitle,
-      body: editedBody
+      body: editedBody,
+      rating: editedRating
     }
 
     setEditable(false);
@@ -84,6 +86,15 @@ const ProductReviewItem = ({ review }) => {
             onChange={(e) => setEditedBody(e.target.value)}
           />
           </label>
+          <label>Overall rating
+                <select onChange={(e) => setEditedRating(e.target.value)}>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </label>
           <button>Save</button>
         </form>
       )}
