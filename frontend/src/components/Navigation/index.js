@@ -1,17 +1,21 @@
 // import React from 'react';
+import { useEffect, useState } from 'react';
 import { NavLink, useLocation, useHistory } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import whiteSamazonLogo from '../../assets/images/WhiteSamazon.png';
 import './Navigation.css';
 import gitHubLogo from '../../assets/images/gitHubLogo.png';
 import linkedInLogo from '../../assets/images/linkedInLogo.png';
 import cartIcon from '../../assets/images/cartIcon.png';
+import { fetchCartItems } from '../../store/cart_items';
 
 const Navigation = () => {
   const sessionUser = useSelector(state => state.session.user);
   const location = useLocation();
   const history = useHistory();
+  const dispatch = useDispatch();
+  const [cartItemsFetched, setCartItemsFetched] = useState(false);
 
   const sessionButton = (
     <ProfileButton user={sessionUser} />
@@ -25,9 +29,23 @@ const Navigation = () => {
     }
   }
 
+  useEffect(() => {
+    if (sessionUser) {
+      dispatch(fetchCartItems()).then(() => {
+        setCartItemsFetched(true);
+      });
+    } else {
+      setCartItemsFetched(false);
+    }
+  }, [sessionUser, dispatch])
+
   const cartItems = useSelector(state => Object.values(state.cartItems).filter(item => item.purchased === false));
   let numCartItems = 0;
-  cartItems.forEach(item => numCartItems += item.quantity);
+  if (cartItemsFetched) {
+    cartItems.forEach(item => numCartItems += item.quantity);
+  } else {
+    numCartItems = 0;
+  }
 
   const categories = ['books', 'electronics', 'home', 'active', 'food'];
   const categoryButtons = categories.map(category => (
@@ -57,12 +75,12 @@ const Navigation = () => {
             </div>
             <div id="navSocials">
               <div id='gitHubLogo'>
-                <a href='https://github.com/ohksam/Samazon'>
+                <a href='https://github.com/ohksam/Samazon' target="_blank">
                   <img src={gitHubLogo} alt='gitHubLogo' />
                 </a>
               </div>
               <div id='linkedInLogo'>
-                <a href='https://www.linkedin.com/'>
+                <a href='https://www.linkedin.com/in/sam-oh-0abb8327b/' target="_blank">
                   <img src={linkedInLogo} alt='linkedInLogo' />
                 </a>
               </div>

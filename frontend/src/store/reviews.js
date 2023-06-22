@@ -52,6 +52,7 @@ export const createReview = (review) => async dispatch => {
         body: JSON.stringify(review)
     })
     const data = await response.json();
+    // debugger
 
     dispatch(receiveReview(data))
 }
@@ -67,7 +68,7 @@ export const updateReview = (review) => async dispatch => {
 }
 
 export const deleteReview = (reviewId) => async dispatch => {
-    await csrfFetch('/api/reviews', {
+    await csrfFetch(`/api/reviews/${reviewId}`, {
         method: 'DELETE'
     })
     dispatch(removeReview(reviewId))

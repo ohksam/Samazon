@@ -143,7 +143,7 @@
     background: #ffa41c;
     border-color: transparent;
     font-size: 13px;
-    cursor: not-allowed;
+    cursor: pointer;
 }
 
 
@@ -191,7 +191,10 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin: 10px 0;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    /* border-bottom: 1px solid orange; */
+    /* border-radius: 4px; */
 }
 
 #individualReviewTitle {
@@ -233,7 +236,33 @@
     color: gray;
 }
 
+#reviewDeleteButton {
+    width: 80px;
+    padding: 5px 10px;
+    background-color: white;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    border: none;
+}
 
+#reviewDeleteButton:hover {
+    cursor: pointer;
+    background-color: aquamarine;
+}
+
+#reviewEditButton {
+    width: 80px;
+    padding: 5px 10px;
+    background-color: white;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    border: none;
+}
+
+#reviewEditButton:hover {
+    cursor: pointer;
+    background-color: aquamarine;
+}
 
 
 #productReviewFormContainer {
@@ -255,7 +284,8 @@
 }
 
 /* review form */
-#reviewForm {
+#reviewForm,
+#editForm {
     display: flex;
     flex-direction: column;
     
@@ -270,6 +300,10 @@
     font-weight: bold;
     margin-bottom: 5px;
   }
+
+  #editForm label {
+    margin-bottom: 5px;
+  }
   
   #reviewForm input,
   #reviewForm textarea {
@@ -281,12 +315,27 @@
     border-radius: 4px;
   }
 
+  #editForm input,
+  #editForm textarea {
+    width: 40%;
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
   #reviewForm select {
     width: 10%;
     /* padding: 10px; */
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;    
+  }
+
+  #editForm select {
+    width: 40px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
   }
   
   #reviewForm button {
@@ -297,9 +346,22 @@
     color: #111;
     cursor: pointer;
     border-radius: 4px;
+    /* width: 100%;
+    align-self: center; */
+  }
+
+  #editForm button {
+    width: 80px;
+    padding: 5px 10px;
+    background-color: #f0c14b;
+    border: none;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    cursor: pointer;
   }
   
-  #reviewForm button:hover {
+  #reviewForm button:hover,
+  #editForm button:hover {
     background-color: #ddb347;
   }
   
