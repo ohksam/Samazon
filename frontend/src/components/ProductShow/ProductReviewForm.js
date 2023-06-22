@@ -21,6 +21,10 @@ const ProductReviewForm = ({ product }) => {
             product_id: product.id
         }
         dispatch(createReview(reviewObject))
+
+        setTitle('');
+        setBody('');
+        setRating(1);
     }
 
     if (!sessionUser) return null
