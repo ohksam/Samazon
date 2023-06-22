@@ -80,7 +80,7 @@ midnight.photo.attach(
   filename: "midnight.jpg"
 )
 
-dumbcode = Product.create(name: 'Coding All-in-One For Dummies (For Dummies (Computer/Tech)) 2nd Edition', description: 'The go-to guide for learning coding from the ground-up* Developing native mobile apps for Android and iOS using Flutter* Introducing cloud computing* Expanded JavaScript coverage* Learn the latest JavaScript syntax* Upgraded from Python 2 to Python 3* Learn responsive design with Flexbox*', price: 39.99, category: 'books')
+dumbcode = Product.create(name: 'Coding All-in-One For Dummies (For Dummies (Computer/Tech)) 2nd Edition', description: 'The go-to guide for learning coding from the ground-up* Developing native mobile apps for Android and iOS using Flutter* Introducing cloud computing* Expanded JavaScript coverage* Learn the latest JavaScript syntax* Upgraded from Python 2 to Python 3* Learn responsive design with Flexbox', price: 39.99, category: 'books')
 dumbcode.photo.attach(
   io: URI.open("https://samazon-seeds.s3.amazonaws.com/dumbcode.jpg"),
   filename: "dumbcode.jpg"
@@ -141,7 +141,7 @@ monitor.photo.attach(
   filename: "monitor.jpg"
 )
 
-visionpro = Product.create(name: 'Apple Vision Pro', description: 'A singular piece of three-dimensionally formed laminated glass flows into an aluminum alloy frame that gently curves to wrap around your face.* An array of advanced cameras and sensors work together to let you see the world clearly, understand your environment, and detect hand input.* Speakers are positioned close to your ears, delivering rich Spatial Audio that seamlessly blends with real-world sounds.* The Head Band provides cushioning, breathability, and stretch. The Fit Dial lets you adjust Vision Pro precisely to your head.* A pair of custom micro‑OLED displays deliver more pixels than a 4K TV to each eye — for stunning clarity.*', price: 3499.99, category: 'electronics')
+visionpro = Product.create(name: 'Apple Vision Pro', description: 'A singular piece of three-dimensionally formed laminated glass flows into an aluminum alloy frame that gently curves to wrap around your face.* An array of advanced cameras and sensors work together to let you see the world clearly, understand your environment, and detect hand input.* Speakers are positioned close to your ears, delivering rich Spatial Audio that seamlessly blends with real-world sounds.* The Head Band provides cushioning, breathability, and stretch. The Fit Dial lets you adjust Vision Pro precisely to your head.* A pair of custom micro‑OLED displays deliver more pixels than a 4K TV to each eye — for stunning clarity.', price: 3499.99, category: 'electronics')
 visionpro.photo.attach(
   io: URI.open("https://samazon-seeds.s3.amazonaws.com/visionpro.jpg"),
   filename: "visionpro.jpg"
@@ -164,7 +164,7 @@ bose.photo.attach(
 puts "Seeding home goods..."
 
 ##### Home
-potty = Product.create(name: 'Squatty Potty The Original Toilet Stool - Bamboo Flip, 7" & 9" Height, Brown', description: 'Bamboo* Doctor recommended* Easy to alternate between 7" Stool & 9" Stool* Made of 100% natural bamboo* To simulate a squatting position, all you have to do is take a seat, put your feet on the toilet stool, and get comfortable.*', price: 24.99, category: 'home')
+potty = Product.create(name: 'Squatty Potty The Original Toilet Stool - Bamboo Flip, 7" & 9" Height, Brown', description: 'Bamboo* Doctor recommended* Easy to alternate between 7" Stool & 9" Stool* Made of 100% natural bamboo* To simulate a squatting position, all you have to do is take a seat, put your feet on the toilet stool, and get comfortable.', price: 24.99, category: 'home')
 potty.photo.attach(
   io: URI.open("https://samazon-seeds.s3.amazonaws.com/potty.jpg"),
   filename: "potty.jpg"
