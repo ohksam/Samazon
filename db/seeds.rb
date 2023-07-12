@@ -17,7 +17,8 @@ require 'open-uri'
     # from aa.io - for easy testing, so that after seeding, the first `User` has `id` of 1
     ApplicationRecord.connection.reset_pk_sequence!('users')
     ApplicationRecord.connection.reset_pk_sequence!('products')
-    ApplicationRecord.connection.reset_pk_sequence!('cart_items')
+    # might not need to reset this if we're not wiping cart items above.
+    # ApplicationRecord.connection.reset_pk_sequence!('cart_items')
   
     puts "Creating users..."
     User.create!(
@@ -29,6 +30,12 @@ require 'open-uri'
     User.create!(
       name: 'Demo User',
       email: 'demo@user.io',
+      password: 'password'
+    )
+
+    User.create!(
+      name: 'The Reviewer',
+      email: 'reviewer@samazon.com',
       password: 'password'
     )
   

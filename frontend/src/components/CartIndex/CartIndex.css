@@ -102,9 +102,15 @@
 
 #cartItemDelet {
     margin-left: 5px;
-    /* padding: 2px; */
+    padding: 5px;
     background-color: orange;
     border-radius: 10px;
+    border: none;
+}
+
+#cartItemDelet:hover {
+    background-color: darkorange;
+    cursor: pointer;
 }
 
 #quantityTimesPrice {
@@ -150,4 +156,8 @@
     cursor: pointer;
     font-size: 13px;
     margin-top: 10px;
+}
+
+#checkoutButton:hover {
+    transform: translateY(1px)
 }

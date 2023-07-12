@@ -35,7 +35,7 @@ const ProductShow = () => {
   const handleClick = (e) => {
     e.preventDefault();
 
-    debugger
+    // debugger
     if (e.target.value === "Buy Now") {
       handleBuyNow();
     } else {
@@ -153,7 +153,6 @@ const ProductShow = () => {
           </div>
 
           <div id='productReviewFormContainer'>
-            <h1 id="reviewThisProduct">Review this product</h1>
             <ProductReviewForm product={product} />
           </div>
         </div>

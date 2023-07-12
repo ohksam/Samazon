@@ -264,6 +264,9 @@
     background-color: aquamarine;
 }
 
+.cantReview {
+    font-size: smaller;
+}
 
 #productReviewFormContainer {
     margin-top: 50px;

@@ -87,7 +87,7 @@ const ProductReviewItem = ({ review }) => {
           />
           </label>
           <label>Overall rating
-                <select value={review.rating}onChange={(e) => setEditedRating(e.target.value)}>
+                <select value={editedRating}onChange={(e) => setEditedRating(e.target.value)}>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
