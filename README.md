@@ -1,6 +1,6 @@
 # Welcome to Samazon
 
-Check out the Live Site!
+Check out the [Live Site](samazon.onrender.com)!
 
 # Introduction
 Samazon is a web application designed to replicate the core functionalities of Amazon, allowing users to browse and purchase products, manage their shopping cart, and place and review orders. Technologies implemented in this project include: 
