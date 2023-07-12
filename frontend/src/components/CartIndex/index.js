@@ -12,9 +12,10 @@ const CartIndex = () => {
   const cartItems = useSelector(state => Object.values(state.cartItems).filter(item => item.purchased === false));
   const history = useHistory();
 
-  useEffect(() => {
-    dispatch(fetchCartItems())
-  }, [dispatch])
+  // this is commented out because Navigation is already invoking receiveCartItems
+  // useEffect(() => {
+  //   dispatch(fetchCartItems())
+  // }, [dispatch])
 
   const CartListItems = cartItems.map((cartItem) => <CartIndexItem cartItem={cartItem} />)
 
