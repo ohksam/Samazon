@@ -23,7 +23,7 @@ const SearchResults = () => {
 
     const searchHeader = `Showing results for '${searchParams}'...`
 
-    const ProductListItems = products.map((product) => <ProductIndexItem product={product}/>)
+    const ProductListItems = products.length > 0 ? products.map((product) => <ProductIndexItem product={product}/>) : <p>No matching products</p>
 
     return (
         <>

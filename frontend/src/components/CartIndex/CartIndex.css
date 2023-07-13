@@ -55,6 +55,12 @@
     flex-direction: column;
 }
 
+#emptyCartMessage {
+  margin: 30px;
+  align-self: center;
+}
+
+
 #cartItemContainer {
     display: flex;
     flex-direction: row;
