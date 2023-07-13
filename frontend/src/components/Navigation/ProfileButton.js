@@ -49,6 +49,7 @@ function ProfileButton({ user }) {
       {showMenu && (
         <div id="dropdownMenu" onMouseLeave={closeMenu}>
           <button id="signXButton" onClick={logout}>Log Out</button>
+          <p id="goodbyeMessage">See you next time!</p>
         </div>
       )}
     </>

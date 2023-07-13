@@ -161,6 +161,11 @@
     box-shadow: 2px 2px 50px #FEBD69;
 }
 
+#goodbyeMessage {
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
 #newUserText {
     font-size: 12px;
 }
