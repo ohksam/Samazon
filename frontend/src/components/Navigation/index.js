@@ -16,6 +16,21 @@ const Navigation = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   const [cartItemsFetched, setCartItemsFetched] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleSearch = e => {
+    e.preventDefault();
+
+    if (searchTerm.length === 0) {
+      history.push('/');
+    } else {
+      history.push(`/search/${searchTerm}`)
+    }
+  }
+
+  useEffect(() => {
+    if (!location.pathname.includes('search')) setSearchTerm('');
+  }, [location.pathname])
 
   const sessionButton = (
     <ProfileButton user={sessionUser} />
@@ -89,8 +104,13 @@ const Navigation = () => {
 
           <div className="navMid">
             <div id='navSearchContainer'>
-              <form id='navSearchForm'>
-                <input id='navSearchInput' placeholder='Search Samazon'></input>
+              <form id='navSearchForm' onSubmit={handleSearch}>
+                <input id='navSearchInput'
+                  placeholder='Search Samazon'
+                  type='text'
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  value={searchTerm}
+                />
                 <button>Search</button>
               </form>
             </div>

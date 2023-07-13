@@ -13,17 +13,21 @@ function ProfileButton({ user }) {
     setShowMenu(true);
   };
   
-  useEffect(() => {
-    if (!showMenu) return;
+  // useEffect(() => {
+  //   if (!showMenu) return;
 
-    const closeMenu = () => {
-      setShowMenu(false);
-    };
+  //   const closeMenu = () => {
+  //     setShowMenu(false);
+  //   };
 
-    document.addEventListener('click', closeMenu);
+  //   document.addEventListener('click', closeMenu);
   
-    return () => document.removeEventListener("click", closeMenu);
-  }, [showMenu]);
+  //   return () => document.removeEventListener("click", closeMenu);
+  // }, [showMenu]);
+
+  const closeMenu = () => {
+    setShowMenu(false);
+  };
 
   const logout = (e) => {
     e.preventDefault();
@@ -33,7 +37,7 @@ function ProfileButton({ user }) {
 
   const buttonText = user ? `Hello ${user.name}` : 'Hello, sign in'
 
-  //this isn't dry but it doesn't work when I abstract...
+  //this isn't DRY but it doesn't work when I abstract...
   if (user) { 
     return (
     <>
@@ -43,7 +47,7 @@ function ProfileButton({ user }) {
         </div>
       </button>
       {showMenu && (
-        <div id="dropdownMenu">
+        <div id="dropdownMenu" onMouseLeave={closeMenu}>
           <button id="signXButton" onClick={logout}>Log Out</button>
         </div>
       )}
@@ -57,7 +61,7 @@ function ProfileButton({ user }) {
         </div>
       </button>
       {showMenu && (
-        <ul id="dropdownMenu">
+        <ul id="dropdownMenu" onMouseLeave={closeMenu}>
           <div>
             <button id="signXButton" onClick={() => {history.push('/login')}}>Sign In</button>
             <p id="newUserText">New to Samazon? <a href="/signup">Start here</a></p>

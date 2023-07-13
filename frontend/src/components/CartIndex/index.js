@@ -17,6 +17,8 @@ const CartIndex = () => {
   //   dispatch(fetchCartItems())
   // }, [dispatch])
 
+  const emptyCartMessage = <p id='emptyCartMessage'>Your Samazon cart is empty</p>
+
   const CartListItems = cartItems.map((cartItem) => <CartIndexItem cartItem={cartItem} />)
 
   let cartTotal = 0;
@@ -53,6 +55,7 @@ const CartIndex = () => {
         </div>
         <div id='allCartItems'>
           {CartListItems}
+          {cartItems.length === 0 && emptyCartMessage}
         </div>
       </div>
       <div id='cartIndexRight'>

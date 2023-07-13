@@ -10,6 +10,7 @@ import ProductIndex from './components/ProductIndex';
 import CartIndex from './components/CartIndex';
 import ThankYouPage from './components/ThankYouPage';
 import OrderHistory from './components/OrderHistory';
+import SearchResults from './components/SearchResults';
 import Footer from './components/Footer';
 
 
@@ -32,7 +33,7 @@ function App() {
           <ProductShow />
         </Route>
         <Route path='/categories/:categoryName' exact>
-          <ProductIndex /> 
+          <ProductIndex />
         </Route>
         <Route path='/cart' exact>
           <CartIndex />
@@ -42,6 +43,9 @@ function App() {
         </Route>
         <Route path='/history' exact>
           <OrderHistory />
+        </Route>
+        <Route path='/search/:searchParams' exact>
+          <SearchResults />
         </Route>
       </Switch>
       <Footer />
