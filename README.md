@@ -1,5 +1,5 @@
 # Welcome to [Samazon](https://samazon.onrender.com/)!
-***gif***
+![Basic Functionality Gif](frontend\src\assets\images\Production-ReadMe-Gif.gif)
 
 Samazon is a web application designed to replicate the core functionalities of Amazon, allowing users to browse, purchase, and review products. Technologies implemented in this project include: 
 - Languages: Javascript, Ruby
