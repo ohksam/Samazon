@@ -30,6 +30,9 @@ const Navigation = () => {
 
   useEffect(() => {
     if (!location.pathname.includes('search')) setSearchTerm('');
+
+    // scrolls to top of page when navigating to another page
+    window.scrollTo(0, 0);
   }, [location.pathname])
 
   const sessionButton = (
@@ -126,7 +129,7 @@ const Navigation = () => {
             <div id='cartStuff'>
               <NavLink to={cartClickDestination}>
                 <span id='cartItemCount'>{numCartItems}</span>
-                <img id='cartImage' src={cartIcon} />
+                <img id='cartImage' alt='cartIcon' src={cartIcon} />
               </NavLink>
             </div>
           </div>
